@@ -64,21 +64,6 @@ namespace QLKTX.GUI
             txtSearchAcc.Text = "";
         }
 
-        private int GetSelectedRow(string USER)
-        {
-            for (int i = 0; i < dgvQLAccount.Rows.Count; i++)
-            {
-                if (dgvQLAccount.Rows[i].Cells[0].Value != null) // check null dgv
-                {
-                    if (dgvQLAccount.Rows[i].Cells[0].Value.ToString() == USER)
-                    {
-                        return i;
-                    }
-                }
-            }
-            return -1;
-        }
-
         private bool CheckValidate()
         {
             if (txtAccount.Text == "" || txtPassAcc.Text == "" || txtFullName.Text == "")
@@ -90,11 +75,15 @@ namespace QLKTX.GUI
             return true;
         }
 
-        private void reloadDGV()
+        private void reloadDGVSinhVien()
+        {
+            List<ACCOUNT> listAccount = context.ACCOUNT.ToList();
+            BindGridSV(listAccount);
+        }
+        private void reloadDGVNhanVien()
         {
             List<ACCOUNT> listAccount = context.ACCOUNT.ToList();
             BindGridNV(listAccount);
-            BindGridSV(listAccount);
         }
 
         private void frmNV_ListAccount_Load(object sender, EventArgs e)
@@ -120,7 +109,8 @@ namespace QLKTX.GUI
                     dbUpdate.PASS = txtPassAcc.Text;
                     dbUpdate.QUYEN = cmbQuyen.Text;
                     context.SaveChanges();
-                    reloadDGV();
+                    reloadDGVSinhVien();
+                    reloadDGVNhanVien();
                     setNull();
                     MessageBox.Show("Cập nhật dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK);
                     //Sum();
@@ -142,7 +132,8 @@ namespace QLKTX.GUI
                 {
                     context.ACCOUNT.Remove(dbDelete);
                     context.SaveChanges();
-                    reloadDGV();
+                    reloadDGVSinhVien();
+                    reloadDGVNhanVien();
                     setNull();
                     MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK);
                     //Sum();
@@ -189,24 +180,50 @@ namespace QLKTX.GUI
 
         private void txtSearchAcc_TextChanged(object sender, EventArgs e)
         {
-            List<ACCOUNT> listAccountSearch = new List<ACCOUNT>();
-            List<ACCOUNT> listAccount = context.ACCOUNT.ToList();
-            string search = txtSearchAcc.Text;
-            if (search != "")
+            if (cmbViewListAcc.SelectedIndex == 0)
             {
-                foreach (ACCOUNT item in listAccount)
+                string search = txtSearchAcc.Text;
+                //ACCOUNT acc = context.ACCOUNT.Find(p => p.USER == txtSearchAcc.ToString());
+                List<ACCOUNT> listAccountSearch = new List<ACCOUNT>();
+                List<ACCOUNT> listAccount = context.ACCOUNT.ToList();
+
+
+                if (search != "")
                 {
-                    if (item.NHANVIEN.HOTENNV.ToLower().Contains(search.ToLower()) || 
-                        item.SINHVIEN.HOTEN.ToLower().Contains(search.ToLower()) || item.USER.ToLower().Contains(search.ToLower()))
+                    foreach (ACCOUNT item in listAccount)
                     {
-                        listAccountSearch.Add(item);
+                        if (item.USER.ToLower().Contains(search.ToLower()))
+                        {
+                            listAccountSearch.Add(item);
+                        }
                     }
+                    BindGridNV(listAccountSearch);
                 }
-                BindGridNV(listAccountSearch);
+                else
+                {
+                    BindGridNV(listAccount);
+                }
             }
             else
             {
-                BindGridNV(listAccount);
+                List<ACCOUNT> listAccountSearch = new List<ACCOUNT>();
+                List<ACCOUNT> listAccount = context.ACCOUNT.ToList();
+                string search = txtSearchAcc.Text;
+                if (search != "")
+                {
+                    foreach (ACCOUNT item in listAccount)
+                    {
+                        if (item.USER.ToLower().Contains(search.ToLower()))
+                        {
+                            listAccountSearch.Add(item);
+                        }
+                    }
+                    BindGridSV(listAccountSearch);
+                }
+                else
+                {
+                    BindGridSV(listAccount);
+                }
             }
         }
     }

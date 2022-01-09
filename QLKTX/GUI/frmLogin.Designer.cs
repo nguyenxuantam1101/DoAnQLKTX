@@ -168,6 +168,7 @@ namespace QLKTX.GUI
             this.txtPass.ShadowDecoration.Parent = this.txtPass;
             this.txtPass.Size = new System.Drawing.Size(316, 36);
             this.txtPass.TabIndex = 2;
+            this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.IconRightClick += new System.EventHandler(this.txtPass_IconRightClick);
             // 
             // txtUser
@@ -225,7 +226,7 @@ namespace QLKTX.GUI
             this.Minisize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Minisize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.Minisize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(91)))), ((int)(((byte)(111)))));
-            this.Minisize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(91)))), ((int)(((byte)(111)))));
+            this.Minisize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
             this.Minisize.HoverState.Parent = this.Minisize;
             this.Minisize.IconColor = System.Drawing.Color.White;
             this.Minisize.Location = new System.Drawing.Point(588, 12);
@@ -255,6 +256,7 @@ namespace QLKTX.GUI
             this.picBackground.Location = new System.Drawing.Point(0, 0);
             this.picBackground.Name = "picBackground";
             this.picBackground.ShadowDecoration.Parent = this.picBackground;
+            this.picBackground.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
             this.picBackground.Size = new System.Drawing.Size(689, 688);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picBackground.TabIndex = 0;
@@ -267,8 +269,8 @@ namespace QLKTX.GUI
             // 
             // guna2ShadowForm1
             // 
-            this.guna2ShadowForm1.BorderRadius = 50;
-            this.guna2ShadowForm1.ShadowColor = System.Drawing.Color.Red;
+            this.guna2ShadowForm1.BorderRadius = 100;
+            this.guna2ShadowForm1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
             this.guna2ShadowForm1.TargetForm = this;
             // 
             // guna2DragControl2
@@ -286,6 +288,7 @@ namespace QLKTX.GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1920, 1030);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmLogin";
             this.pnLogin.ResumeLayout(false);
             this.pnLogin.PerformLayout();

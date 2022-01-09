@@ -2,6 +2,7 @@
 using QLKTX.DATA;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QLKTX.GUI
@@ -10,12 +11,12 @@ namespace QLKTX.GUI
     {
         string quyen = "";
         string manv = "";
-        string CCCD = "";
+        string cCCD = "";
         KTXDBContext context = new KTXDBContext();
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        public frmKTX_Main(string quyen, string manv, string CCCD)
+        public frmKTX_Main(string quyen, string manv, string cCCD)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -26,7 +27,7 @@ namespace QLKTX.GUI
             this.DoubleBuffered = true;
             this.quyen = quyen;
             this.manv = manv;
-            this.CCCD = CCCD;
+            this.cCCD = cCCD;
             //this.TopMost = true;
             //this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
@@ -40,6 +41,10 @@ namespace QLKTX.GUI
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(24, 161, 251);
+            public static Color color7 = Color.FromArgb(151, 255, 255);
+            public static Color color8 = Color.FromArgb(106, 90, 205);
+            public static Color color9 = Color.FromArgb(67, 110, 238);
+            public static Color color10 = Color.FromArgb(255, 106, 106);
         }
         //Methods
         private void ActivateButton(object senderBtn, Color color)
@@ -61,8 +66,8 @@ namespace QLKTX.GUI
                 //leftBorderBtn.Visible = true;
                 //leftBorderBtn.BringToFront();
                 //Current Child Form Icon
-                //iconCurrentHome.IconChar = currentBtn.IconChar;
-                //iconCurrentHome.IconColor = color;
+                iconCurrentHome.IconChar = currentBtn.IconChar;
+                iconCurrentHome.IconColor = color;
             }
         }
         private void DisableButton()
@@ -89,6 +94,8 @@ namespace QLKTX.GUI
         }
         private void frmKTX_Main_Load(object sender, EventArgs e)
         {
+            NHANVIEN nhanvien = context.NHANVIEN.FirstOrDefault(p => p.MANV == manv);
+            SINHVIEN sinhvien = context.SINHVIEN.FirstOrDefault(p => p.CCCD == cCCD);
             hidePnMenu();
             if (quyen == "ADMIN")
             {
@@ -98,6 +105,7 @@ namespace QLKTX.GUI
                 //pnBill.Visible = true;
                 //pnStatistic.Visible = true;
                 //pnChucNangInfor.Visible = true;
+                btnTextInfor.Text = nhanvien.HOTENNV;
             }
             else if (quyen == "MANAGE")
             {
@@ -107,6 +115,7 @@ namespace QLKTX.GUI
                 //pnChucNangInfor.Visible = true;
                 btnHeThong.Visible = false;
                 pnSystem.Visible = false;
+                btnTextInfor.Text = nhanvien.HOTENNV;
             }
             else //USER
             {
@@ -118,8 +127,8 @@ namespace QLKTX.GUI
                 pnSystem.Visible = false;
                 pnStatistic.Visible = false;
                 pnStatisticMenu.Visible = false;
+                btnTextInfor.Text = sinhvien.HOTEN;
             }
-            //Hiện thị tên
         }
         //click danh muc -> show menu
         private void showSubMenu(Panel subMenu)
@@ -192,7 +201,7 @@ namespace QLKTX.GUI
             pnHienThiFormCon.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            //lblTitleChildForm.Text = childForm.Text;
+            lblTitleChildForm.Text = childForm.Text;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -202,37 +211,44 @@ namespace QLKTX.GUI
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new frmNV_AddRoom());
         }
 
         private void btnQLTK_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new frmNV_ListAccount());
         }
 
         private void btnNV_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new frmNV_ListEmployee());
         }
 
         private void btnSV_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new frmNV_ListStudent());
         }
 
         private void btnToa_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color4);
             OpenChildForm(new frmNV_AddBuilding());
         }
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color5);
             OpenChildForm(new frmNV_AddRoom());
         }
 
         private void btnSVInfo_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmSV_Info());
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new frmSV_Info(cCCD));
         }
 
         private void btnLuuTru_Click(object sender, EventArgs e)
@@ -242,12 +258,14 @@ namespace QLKTX.GUI
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color6);
             OpenChildForm(new frmNV_CreateBill(manv));
         }
 
         private void btnSV_HoaDon_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmSV_InfoBill(CCCD));
+            ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new frmSV_InfoBill(cCCD));
         }
 
         private void btnReportHoaDon_Click(object sender, EventArgs e)
@@ -258,6 +276,24 @@ namespace QLKTX.GUI
         private void btnThongKeNV_Click(object sender, EventArgs e)
         {
             //chưa có form
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            Reset();
+        }
+
+        private void Reset()
+        {
+            DisableButton();
+            leftBorderBtn.Visible = false;
+            iconCurrentHome.IconChar = IconChar.Home;
+            iconCurrentHome.IconColor = Color.OrangeRed;
+            lblTitleChildForm.Text = "TRANG CHỦ";
         }
     }
 }

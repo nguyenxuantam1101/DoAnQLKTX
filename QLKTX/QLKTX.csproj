@@ -253,6 +253,7 @@
     <None Include="Resources\PicHomeLogin.png" />
     <None Include="Resources\icon_hide_final.png" />
     <None Include="Resources\avatar_user.png" />
+    <None Include="Resources\bannerKTX.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -34,6 +34,7 @@ namespace QLKTX.GUI
         private void BindGrid(List<SINHVIEN> listStudent)
         {
             dgvStudent.Rows.Clear();
+            dgvStudent.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             int i = 1;
             foreach (var item in listStudent)
             {
@@ -148,6 +149,7 @@ namespace QLKTX.GUI
             dgvThanNhan.Rows.Clear();
             foreach (var item in listThanNhan)
             {
+                dgvThanNhan.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                 int index = dgvThanNhan.Rows.Add();
                 dgvThanNhan.Rows[index].Cells[0].Value = item.TENNGUOITHAN;
                 dgvThanNhan.Rows[index].Cells[1].Value = item.QUANHEVOISV;
@@ -450,7 +452,6 @@ namespace QLKTX.GUI
                     txtAddressSV.Text = dgvStudent.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
                     cmbRoom.SelectedIndex = cmbRoom.FindString(dgvStudent.Rows[e.RowIndex].Cells[11].FormattedValue.ToString());
                     cmbSchool.SelectedIndex = cmbSchool.FindString(dgvStudent.Rows[e.RowIndex].Cells[12].FormattedValue.ToString());
-                    dieuchinh(true);
                     List<NGUOITHANSV> listThanNhan = context.NGUOITHANSV.Where(p=>p.CCCD == txtCCCD.Text).ToList();
                     BindGridThanNhan(listThanNhan);
                 }
@@ -526,9 +527,6 @@ namespace QLKTX.GUI
             }
         }
         //Xuất DS Sinh Viên Sang Excel
-
-
-
         public void ExportFile(DataTable dataTable, string sheetName, string title)
         {
             //Tạo các đối tượng Excel

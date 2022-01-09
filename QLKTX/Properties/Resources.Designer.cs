@@ -83,6 +83,16 @@ namespace QLKTX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bannerKTX {
+            get {
+                object obj = ResourceManager.GetObject("bannerKTX", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_hide_final {
             get {
                 object obj = ResourceManager.GetObject("icon_hide_final", resourceCulture);

@@ -10,9 +10,7 @@ namespace QLKTX.GUI
     public partial class frmNV_CreateBill : Form
     {
         string manv = "";
-        DateTime date;
         KTXDBContext context = new KTXDBContext();
-        int maHoaDon = 0;
         public frmNV_CreateBill(string manv)
         {
             InitializeComponent();
@@ -33,7 +31,7 @@ namespace QLKTX.GUI
             this.cmbBuilding.ValueMember = "MATOA";
         }
         private void BindGrid(List<HOADONDIENNUOC> listHoaDon)
-        {
+        {           
             dgvHoaDon.Rows.Clear();
             foreach (var item in listHoaDon)
             {
@@ -83,6 +81,7 @@ namespace QLKTX.GUI
                 //Tab Bảng giá điện nước
                 List<BANGGIADIENNUOC> banggia = context.BANGGIADIENNUOC.ToList();
                 BindGridBangGia(banggia);
+                setNullLePhi();
                 //Tab bảng hóa đơn chi phi
                 List<HOADONLEPHI> lephi = context.HOADONLEPHI.ToList();
                 BindGridLePhi(lephi);
@@ -229,7 +228,7 @@ namespace QLKTX.GUI
             foreach (var item in lephi)
             {
                 {
-           
+                    dgvDSLePhi.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                     int index = dgvDSLePhi.Rows.Add();
                     dgvDSLePhi.Rows[index].Cells[0].Value = item.MAHDLEPHI;
                     dgvDSLePhi.Rows[index].Cells[1].Value = item.SINHVIEN.HOTEN;
@@ -422,6 +421,21 @@ namespace QLKTX.GUI
             txtGiaThanh.Text = "";
         }
 
-        
+        private void dgvBangGia_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvBangGia.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    dgvBangGia.CurrentRow.Selected = true;
+                    cmbTenDichVu.SelectedIndex = cmbTenDichVu.FindString(dgvBangGia.Rows[e.RowIndex].Cells[0].FormattedValue.ToString());
+                    txtGiaThanh.Text = dgvBangGia.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

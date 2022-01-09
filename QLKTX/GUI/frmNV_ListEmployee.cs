@@ -38,7 +38,6 @@ namespace QLKTX.GUI
                     dgvNhanVien.Rows[index].Cells[8].Value = item.LUONG;
                     dgvNhanVien.Rows[index].Cells[9].Value = item.TRANGTHAI;
                     i++;
-                    //Sum();
                 }
             }
         }
@@ -59,7 +58,6 @@ namespace QLKTX.GUI
             robMale.Checked = true;
             dtpBirthday.Value = DateTime.Now;
             txtLuong.Text = "";
-            cmbStatus.SelectedIndex = 0;
             cmbViewListNV.SelectedIndex = 0;
         }
 
@@ -85,7 +83,6 @@ namespace QLKTX.GUI
                 List<NHANVIEN> listNV = context.NHANVIEN.ToList();
                 BindGrid(listNV);
                 robMale.Checked = true;
-                cmbStatus.SelectedIndex = 0;
                 cmbViewListNV.SelectedIndex = 0;
                 pnAddEmployee.Visible = false;
                 //reloadDGV(listNV);
@@ -134,7 +131,7 @@ namespace QLKTX.GUI
                                 DIACHI = txtAddressNV.Text,
                                 CHUCVU = txtChucVu.Text,
                                 LUONG = float.Parse(txtLuong.Text),
-                                TRANGTHAI = cmbStatus.SelectedItem.ToString()
+                                TRANGTHAI = "Đang làm việc"
                             };
                             ACCOUNT a = new ACCOUNT()
                             {
@@ -194,14 +191,10 @@ namespace QLKTX.GUI
                     dbUpdate.DIACHI = txtAddressNV.Text;
                     dbUpdate.CHUCVU = txtChucVu.Text;
                     dbUpdate.LUONG = float.Parse(txtLuong.Text);
-                    dbUpdate.TRANGTHAI = cmbStatus.Text;
-                    //accUpdate.USER = txtMaNV.Text;
-                    //accUpdate.PASS = txtPhoneNV.Text;
                     context.SaveChanges();
                     reloadDGV();
                     setNull();
                     MessageBox.Show("Cập Nhập dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK);
-                    //Sum();
                 }
                 else
                 {
@@ -289,7 +282,6 @@ namespace QLKTX.GUI
                     txtAddressNV.Text = dgvNhanVien.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
                     txtChucVu.Text = dgvNhanVien.Rows[e.RowIndex].Cells[7].FormattedValue.ToString();
                     txtLuong.Text = dgvNhanVien.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
-                    cmbStatus.SelectedIndex = cmbStatus.FindString(dgvNhanVien.Rows[e.RowIndex].Cells[9].FormattedValue.ToString());
                     dieuchinh(true);
                 }
             }
@@ -615,7 +607,6 @@ namespace QLKTX.GUI
             }
             ExportFile(dataTable, "Danh sách", "Danh Sách Nhân Viên");
         }
-
     }
 }
 

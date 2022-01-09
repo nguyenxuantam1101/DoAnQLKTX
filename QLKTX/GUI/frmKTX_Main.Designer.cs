@@ -62,7 +62,9 @@ namespace QLKTX.GUI
             this.pnDesktop = new System.Windows.Forms.Panel();
             this.pnHienThiFormCon = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.pnKhungVien2 = new System.Windows.Forms.Panel();
+            this.iconCurrentHome = new FontAwesome.Sharp.IconPictureBox();
             this.pnAvatar = new System.Windows.Forms.Panel();
             this.pnInfor = new System.Windows.Forms.Panel();
             this.pnChucNangInfor = new System.Windows.Forms.Panel();
@@ -91,6 +93,7 @@ namespace QLKTX.GUI
             this.pnSystem.SuspendLayout();
             this.pnDesktop.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentHome)).BeginInit();
             this.pnAvatar.SuspendLayout();
             this.pnInfor.SuspendLayout();
             this.pnChucNangInfor.SuspendLayout();
@@ -167,6 +170,7 @@ namespace QLKTX.GUI
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // pnMenu
             // 
@@ -640,11 +644,25 @@ namespace QLKTX.GUI
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.lblTitleChildForm);
             this.panel1.Controls.Add(this.pnKhungVien2);
+            this.panel1.Controls.Add(this.iconCurrentHome);
             this.panel1.Location = new System.Drawing.Point(10, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(763, 54);
             this.panel1.TabIndex = 14;
+            // 
+            // lblTitleChildForm
+            // 
+            this.lblTitleChildForm.AutoSize = true;
+            this.lblTitleChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(73)))), ((int)(((byte)(92)))));
+            this.lblTitleChildForm.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleChildForm.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTitleChildForm.Location = new System.Drawing.Point(74, 2);
+            this.lblTitleChildForm.Name = "lblTitleChildForm";
+            this.lblTitleChildForm.Size = new System.Drawing.Size(180, 31);
+            this.lblTitleChildForm.TabIndex = 16;
+            this.lblTitleChildForm.Text = "TRANG CHỦ";
             // 
             // pnKhungVien2
             // 
@@ -654,6 +672,21 @@ namespace QLKTX.GUI
             this.pnKhungVien2.Name = "pnKhungVien2";
             this.pnKhungVien2.Size = new System.Drawing.Size(763, 10);
             this.pnKhungVien2.TabIndex = 14;
+            // 
+            // iconCurrentHome
+            // 
+            this.iconCurrentHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(73)))), ((int)(((byte)(92)))));
+            this.iconCurrentHome.ForeColor = System.Drawing.Color.OrangeRed;
+            this.iconCurrentHome.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconCurrentHome.IconColor = System.Drawing.Color.OrangeRed;
+            this.iconCurrentHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentHome.IconSize = 53;
+            this.iconCurrentHome.Location = new System.Drawing.Point(8, -2);
+            this.iconCurrentHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconCurrentHome.Name = "iconCurrentHome";
+            this.iconCurrentHome.Size = new System.Drawing.Size(53, 54);
+            this.iconCurrentHome.TabIndex = 15;
+            this.iconCurrentHome.TabStop = false;
             // 
             // pnAvatar
             // 
@@ -760,9 +793,9 @@ namespace QLKTX.GUI
             this.btnTextInfor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTextInfor.IconSize = 30;
             this.btnTextInfor.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnTextInfor.Location = new System.Drawing.Point(2, -6);
+            this.btnTextInfor.Location = new System.Drawing.Point(2, -7);
             this.btnTextInfor.Name = "btnTextInfor";
-            this.btnTextInfor.Size = new System.Drawing.Size(272, 58);
+            this.btnTextInfor.Size = new System.Drawing.Size(272, 59);
             this.btnTextInfor.TabIndex = 10;
             this.btnTextInfor.Text = "Họ và tên";
             this.btnTextInfor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -864,6 +897,8 @@ namespace QLKTX.GUI
             this.pnSystem.ResumeLayout(false);
             this.pnDesktop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentHome)).EndInit();
             this.pnAvatar.ResumeLayout(false);
             this.pnInfor.ResumeLayout(false);
             this.pnChucNangInfor.ResumeLayout(false);
@@ -910,9 +945,6 @@ namespace QLKTX.GUI
         private System.Windows.Forms.Panel pnTextInfor;
         private System.Windows.Forms.Panel pnAvatar;
         private System.Windows.Forms.Panel pnInfor;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnKhungVien2;
-        private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
@@ -922,5 +954,10 @@ namespace QLKTX.GUI
         private System.Windows.Forms.Panel pnSystem;
         private FontAwesome.Sharp.IconButton btnHeThong;
         private System.Windows.Forms.Panel pnHienThiFormCon;
+        private System.Windows.Forms.Label lblTitleChildForm;
+        private FontAwesome.Sharp.IconPictureBox iconCurrentHome;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnKhungVien2;
+        private System.Windows.Forms.Panel panel2;
     }
 }
