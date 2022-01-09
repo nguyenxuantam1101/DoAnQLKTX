@@ -24,7 +24,7 @@ namespace QLKTX.DATA
 
         public double? TONGTIEN { get; set; }
 
-        [StringLength(20)]
+        [StringLength(1)]
         public string TRANGTHAI { get; set; }
 
         [StringLength(20)]

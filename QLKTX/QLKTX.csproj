@@ -144,6 +144,12 @@
     <Compile Include="GUI\frmNV_CreateBill.Designer.cs">
       <DependentUpon>frmNV_CreateBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmNV_KyLuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmNV_KyLuat.Designer.cs">
+      <DependentUpon>frmNV_KyLuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmNV_ListAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     </Compile>
     <Compile Include="GUI\frmNV_ListStudent.Designer.cs">
       <DependentUpon>frmNV_ListStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmNV_NoiQuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmNV_NoiQuy.Designer.cs">
+      <DependentUpon>frmNV_NoiQuy.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmSV_Info.cs">
       <SubType>Form</SubType>
@@ -203,6 +215,9 @@
     <EmbeddedResource Include="GUI\frmNV_CreateBill.resx">
       <DependentUpon>frmNV_CreateBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmNV_KyLuat.resx">
+      <DependentUpon>frmNV_KyLuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNV_ListAccount.resx">
       <DependentUpon>frmNV_ListAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNV_ListStudent.resx">
       <DependentUpon>frmNV_ListStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmNV_NoiQuy.resx">
+      <DependentUpon>frmNV_NoiQuy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmSV_Info.resx">
       <DependentUpon>frmSV_Info.cs</DependentUpon>

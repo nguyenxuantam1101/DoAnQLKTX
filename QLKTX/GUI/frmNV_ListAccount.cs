@@ -189,24 +189,50 @@ namespace QLKTX.GUI
 
         private void txtSearchAcc_TextChanged(object sender, EventArgs e)
         {
-            List<ACCOUNT> listAccountSearch = new List<ACCOUNT>();
-            List<ACCOUNT> listAccount = context.ACCOUNT.ToList();
-            string search = txtSearchAcc.Text;
-            if (search != "")
+            if (cmbViewListAcc.SelectedIndex == 0)
             {
-                foreach (ACCOUNT item in listAccount)
+                string search = txtSearchAcc.Text;
+                //ACCOUNT acc = context.ACCOUNT.Find(p => p.USER == txtSearchAcc.ToString());
+                List<ACCOUNT> listAccountSearch = new List<ACCOUNT>();
+                List<ACCOUNT> listAccount = context.ACCOUNT.ToList();
+
+
+                if (search != "")
                 {
-                    if (item.NHANVIEN.HOTENNV.ToLower().Contains(search.ToLower()) || 
-                        item.SINHVIEN.HOTEN.ToLower().Contains(search.ToLower()) || item.USER.ToLower().Contains(search.ToLower()))
+                    foreach (ACCOUNT item in listAccount)
                     {
-                        listAccountSearch.Add(item);
+                        if (item.USER.ToLower().Contains(search.ToLower()))
+                        {
+                            listAccountSearch.Add(item);
+                        }
                     }
+                    BindGridNV(listAccountSearch);
                 }
-                BindGridNV(listAccountSearch);
+                else
+                {
+                    BindGridNV(listAccount);
+                }
             }
             else
             {
-                BindGridNV(listAccount);
+                List<ACCOUNT> listAccountSearch = new List<ACCOUNT>();
+                List<ACCOUNT> listAccount = context.ACCOUNT.ToList();
+                string search = txtSearchAcc.Text;
+                if (search != "")
+                {
+                    foreach (ACCOUNT item in listAccount)
+                    {
+                        if (item.USER.ToLower().Contains(search.ToLower()))
+                        {
+                            listAccountSearch.Add(item);
+                        }
+                    }
+                    BindGridSV(listAccountSearch);
+                }
+                else
+                {
+                    BindGridSV(listAccount);
+                }
             }
         }
     }

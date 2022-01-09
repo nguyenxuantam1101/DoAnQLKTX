@@ -8,7 +8,7 @@ namespace QLKTX.DATA
     public partial class KTXDBContext : DbContext
     {
         public KTXDBContext()
-            : base("name=KTXDBContext")
+            : base("name=KTXDBContext1")
         {
         }
 

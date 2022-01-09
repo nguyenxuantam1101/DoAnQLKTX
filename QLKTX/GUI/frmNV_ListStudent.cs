@@ -18,12 +18,14 @@ namespace QLKTX.GUI
             context = new KTXDBContext();
             InitializeComponent();
         }
-        private void FillRoomCombobox(List<PHONGSV> listRoom)
+        private void FillRoomCombobox(string TOANHA)
+        //private void FillRoomCombobox(List<PHONGSV> listRoom)
         {
-
+           List<PHONGSV> listRoom = context.PHONGSV.Where(p => p.MATOA.Equals(TOANHA)).ToList();
             this.cmbRoom.DataSource = listRoom;
             this.cmbRoom.DisplayMember = "TENPHONG";
             this.cmbRoom.ValueMember = "MAPHONG";
+  
         }
         private void FillSchoolCombobox(List<TRUONGHOC> listSchool)
         {
@@ -31,6 +33,14 @@ namespace QLKTX.GUI
             this.cmbSchool.DisplayMember = "TENTRUONG";
             this.cmbSchool.ValueMember = "MATRUONG";
         }
+
+        private void FillBuildingCombobox(List<TOANHA> listToa)
+        {
+            this.cmbToa.DataSource = listToa;
+            this.cmbToa.DisplayMember = "TENTOA";
+            this.cmbToa.ValueMember = "MATOA";
+        }
+
         private void BindGrid(List<SINHVIEN> listStudent)
         {
             dgvStudent.Rows.Clear();
@@ -208,24 +218,33 @@ namespace QLKTX.GUI
             {
                 BindGridThanNhan(listThanNhan);
             }
-           
+        }
+
+        private void cmbToa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbRoom.Enabled = true;
         }
         private void frmNV_ListStudent_Load(object sender, EventArgs e)
         {
             try
             {
                 List<TRUONGHOC> listSchool = context.TRUONGHOC.ToList();
-                List<PHONGSV> listRoom = context.PHONGSV.ToList();
+
+                //List<PHONGSV> listRoom = context.PHONGSV.Where(p => p.MATOA.Equals(cmbToa.SelectedValue.ToString())).ToList();
                 List<SINHVIEN> listStudent = context.SINHVIEN.ToList();
-                //List<TOANHA> listToa = context.TOANHA.ToList();
-                FillRoomCombobox(listRoom);
-                FillSchoolCombobox(listSchool);
+                List<TOANHA> listToa = context.TOANHA.ToList();
+                FillBuildingCombobox(listToa);
+                FillRoomCombobox(cmbToa.SelectedValue.ToString());
+                //FillRoomCombobox(listRoom);
+                FillSchoolCombobox(listSchool);             
                 BindGrid(listStudent);
                 cmbViewListSV.SelectedIndex = 0;
                 robMale.Checked = true;
                 cmbRoom.SelectedIndex = 0;
                 cmbSchool.SelectedIndex = 0;
                 pnAddStudent.Visible = false;
+                cmbRoom.Enabled = false;
+                //cmbToa.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -792,5 +811,7 @@ namespace QLKTX.GUI
             }
             ExportFile(dataTable, "Danh Sach", "Danh Sách Sinh Viên");
         }
+
+      
     }
 }

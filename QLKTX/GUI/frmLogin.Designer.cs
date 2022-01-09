@@ -63,9 +63,10 @@ namespace QLKTX.GUI
             this.pnLogin.Controls.Add(this.picLogo);
             this.pnLogin.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnLogin.Location = new System.Drawing.Point(0, 0);
+            this.pnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnLogin.Name = "pnLogin";
             this.pnLogin.ShadowDecoration.Parent = this.pnLogin;
-            this.pnLogin.Size = new System.Drawing.Size(367, 688);
+            this.pnLogin.Size = new System.Drawing.Size(275, 559);
             this.pnLogin.TabIndex = 4;
             // 
             // cbRememberMe
@@ -76,11 +77,10 @@ namespace QLKTX.GUI
             this.cbRememberMe.CheckedState.BorderThickness = 0;
             this.cbRememberMe.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(48)))), ((int)(((byte)(100)))));
             this.cbRememberMe.CheckedState.Parent = this.cbRememberMe;
-            this.cbRememberMe.Location = new System.Drawing.Point(26, 403);
-            this.cbRememberMe.Margin = new System.Windows.Forms.Padding(4);
+            this.cbRememberMe.Location = new System.Drawing.Point(20, 327);
             this.cbRememberMe.Name = "cbRememberMe";
             this.cbRememberMe.ShadowDecoration.Parent = this.cbRememberMe;
-            this.cbRememberMe.Size = new System.Drawing.Size(20, 20);
+            this.cbRememberMe.Size = new System.Drawing.Size(15, 16);
             this.cbRememberMe.TabIndex = 3;
             this.cbRememberMe.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(48)))), ((int)(((byte)(100)))));
             this.cbRememberMe.UncheckedState.BorderRadius = 2;
@@ -108,10 +108,11 @@ namespace QLKTX.GUI
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.HoverState.Parent = this.btnLogin;
-            this.btnLogin.Location = new System.Drawing.Point(89, 465);
+            this.btnLogin.Location = new System.Drawing.Point(67, 378);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
-            this.btnLogin.Size = new System.Drawing.Size(180, 45);
+            this.btnLogin.Size = new System.Drawing.Size(135, 37);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseTransparentBackground = true;
@@ -123,9 +124,10 @@ namespace QLKTX.GUI
             this.lblForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPassword.ForeColor = System.Drawing.Color.White;
-            this.lblForgotPassword.Location = new System.Drawing.Point(228, 406);
+            this.lblForgotPassword.Location = new System.Drawing.Point(171, 330);
+            this.lblForgotPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblForgotPassword.Name = "lblForgotPassword";
-            this.lblForgotPassword.Size = new System.Drawing.Size(114, 17);
+            this.lblForgotPassword.Size = new System.Drawing.Size(86, 13);
             this.lblForgotPassword.TabIndex = 3;
             this.lblForgotPassword.Text = "Forgot Password";
             // 
@@ -134,9 +136,10 @@ namespace QLKTX.GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(53, 406);
+            this.label1.Location = new System.Drawing.Point(40, 330);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 17);
+            this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Remember Me";
             // 
@@ -160,13 +163,14 @@ namespace QLKTX.GUI
             this.txtPass.IconRight = global::QLKTX.Properties.Resources.icon_hide_final;
             this.txtPass.IconRightOffset = new System.Drawing.Point(5, 0);
             this.txtPass.IconRightSize = new System.Drawing.Size(30, 25);
-            this.txtPass.Location = new System.Drawing.Point(26, 343);
+            this.txtPass.Location = new System.Drawing.Point(20, 279);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '\0';
             this.txtPass.PlaceholderText = "Password";
             this.txtPass.SelectedText = "";
             this.txtPass.ShadowDecoration.Parent = this.txtPass;
-            this.txtPass.Size = new System.Drawing.Size(316, 36);
+            this.txtPass.Size = new System.Drawing.Size(237, 29);
             this.txtPass.TabIndex = 2;
             this.txtPass.IconRightClick += new System.EventHandler(this.txtPass_IconRightClick);
             // 
@@ -187,23 +191,25 @@ namespace QLKTX.GUI
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUser.HoverState.Parent = this.txtUser;
-            this.txtUser.Location = new System.Drawing.Point(26, 278);
+            this.txtUser.Location = new System.Drawing.Point(20, 226);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUser.Name = "txtUser";
             this.txtUser.PasswordChar = '\0';
             this.txtUser.PlaceholderText = "User";
             this.txtUser.SelectedText = "";
             this.txtUser.ShadowDecoration.Parent = this.txtUser;
-            this.txtUser.Size = new System.Drawing.Size(316, 36);
+            this.txtUser.Size = new System.Drawing.Size(237, 29);
             this.txtUser.TabIndex = 1;
             // 
             // picLogo
             // 
             this.picLogo.Image = global::QLKTX.Properties.Resources.logohutech;
             this.picLogo.ImageRotate = 0F;
-            this.picLogo.Location = new System.Drawing.Point(26, 47);
+            this.picLogo.Location = new System.Drawing.Point(20, 38);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picLogo.Name = "picLogo";
             this.picLogo.ShadowDecoration.Parent = this.picLogo;
-            this.picLogo.Size = new System.Drawing.Size(316, 161);
+            this.picLogo.Size = new System.Drawing.Size(237, 131);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
@@ -214,10 +220,11 @@ namespace QLKTX.GUI
             this.pnPicture.Controls.Add(this.Exit);
             this.pnPicture.Controls.Add(this.picBackground);
             this.pnPicture.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnPicture.Location = new System.Drawing.Point(370, 0);
+            this.pnPicture.Location = new System.Drawing.Point(277, 0);
+            this.pnPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnPicture.Name = "pnPicture";
             this.pnPicture.ShadowDecoration.Parent = this.pnPicture;
-            this.pnPicture.Size = new System.Drawing.Size(689, 688);
+            this.pnPicture.Size = new System.Drawing.Size(517, 559);
             this.pnPicture.TabIndex = 3;
             // 
             // Minisize
@@ -228,10 +235,11 @@ namespace QLKTX.GUI
             this.Minisize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(91)))), ((int)(((byte)(111)))));
             this.Minisize.HoverState.Parent = this.Minisize;
             this.Minisize.IconColor = System.Drawing.Color.White;
-            this.Minisize.Location = new System.Drawing.Point(588, 12);
+            this.Minisize.Location = new System.Drawing.Point(441, 10);
+            this.Minisize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Minisize.Name = "Minisize";
             this.Minisize.ShadowDecoration.Parent = this.Minisize;
-            this.Minisize.Size = new System.Drawing.Size(40, 40);
+            this.Minisize.Size = new System.Drawing.Size(30, 32);
             this.Minisize.TabIndex = 1;
             // 
             // Exit
@@ -241,10 +249,11 @@ namespace QLKTX.GUI
             this.Exit.HoverState.FillColor = System.Drawing.Color.Red;
             this.Exit.HoverState.Parent = this.Exit;
             this.Exit.IconColor = System.Drawing.Color.White;
-            this.Exit.Location = new System.Drawing.Point(634, 12);
+            this.Exit.Location = new System.Drawing.Point(476, 10);
+            this.Exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Exit.Name = "Exit";
             this.Exit.ShadowDecoration.Parent = this.Exit;
-            this.Exit.Size = new System.Drawing.Size(40, 40);
+            this.Exit.Size = new System.Drawing.Size(30, 32);
             this.Exit.TabIndex = 1;
             // 
             // picBackground
@@ -253,9 +262,10 @@ namespace QLKTX.GUI
             this.picBackground.Image = global::QLKTX.Properties.Resources.PicHomeLogin;
             this.picBackground.ImageRotate = 0F;
             this.picBackground.Location = new System.Drawing.Point(0, 0);
+            this.picBackground.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picBackground.Name = "picBackground";
             this.picBackground.ShadowDecoration.Parent = this.picBackground;
-            this.picBackground.Size = new System.Drawing.Size(689, 688);
+            this.picBackground.Size = new System.Drawing.Size(517, 559);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picBackground.TabIndex = 0;
             this.picBackground.TabStop = false;
@@ -278,13 +288,14 @@ namespace QLKTX.GUI
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 688);
+            this.ClientSize = new System.Drawing.Size(794, 559);
             this.Controls.Add(this.pnLogin);
             this.Controls.Add(this.pnPicture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1920, 1030);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(1440, 837);
             this.Name = "frmLogin";
             this.Text = "frmLogin";
             this.pnLogin.ResumeLayout(false);

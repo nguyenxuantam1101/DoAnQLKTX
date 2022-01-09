@@ -17,7 +17,7 @@ namespace QLKTX
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmNV_ListStudent());
         }
     }
 }

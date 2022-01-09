@@ -254,3 +254,6 @@ D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\RdlCompile.compiled
 D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.csproj.CoreCompileInputs.cache
 D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.exe
 D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.pdb
+D:\GITHUB\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.csproj.CopyComplete
+D:\GITHUB\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.GUI.frmNV_KyLuat.resources
+D:\GITHUB\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.GUI.frmNV_NoiQuy.resources
