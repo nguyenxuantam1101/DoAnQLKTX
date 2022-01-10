@@ -12,11 +12,12 @@ namespace QLKTX.GUI
         string quyen = "";
         string manv = "";
         string cCCD = "";
+        string userLogin = "";
         KTXDBContext context = new KTXDBContext();
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        public frmKTX_Main(string quyen, string manv, string cCCD)
+        public frmKTX_Main(string quyen, string manv, string cCCD, string userLogin )
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -28,6 +29,7 @@ namespace QLKTX.GUI
             this.quyen = quyen;
             this.manv = manv;
             this.cCCD = cCCD;
+            this.userLogin = userLogin;
             //this.TopMost = true;
             //this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
@@ -99,29 +101,16 @@ namespace QLKTX.GUI
             hidePnMenu();
             if (quyen == "ADMIN")
             {
-                //pnSystem.Visible = true;
-                ////pnAccountManager.Visible = true;
-                //pnCatalog.Visible = true;
-                //pnBill.Visible = true;
-                //pnStatistic.Visible = true;
-                //pnChucNangInfor.Visible = true;
                 btnTextInfor.Text = nhanvien.HOTENNV;
             }
             else if (quyen == "MANAGE")
             {
-                //pnCatalog.Visible = true;
-                //pnBill.Visible = true;
-                //pnStatistic.Visible = true;
-                //pnChucNangInfor.Visible = true;
                 btnHeThong.Visible = false;
                 pnSystem.Visible = false;
                 btnTextInfor.Text = nhanvien.HOTENNV;
             }
             else //USER
             {
-                //pnExtendCatalog.Visible = true;
-                //pnExtendBill.Visible = true;
-                //pnChucNangInfor.Visible = true;
                 btnHeThong.Visible = false;
                 btnThongKe.Visible = false;
                 pnSystem.Visible = false;
@@ -212,7 +201,7 @@ namespace QLKTX.GUI
         private void btnChangePass_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new frmNV_AddRoom());
+            OpenChildForm(new frmChangePass(userLogin));
         }
 
         private void btnQLTK_Click(object sender, EventArgs e)
@@ -230,7 +219,7 @@ namespace QLKTX.GUI
         private void btnSV_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new frmNV_ListStudent());
+            OpenChildForm(new frmNV_ListStudent(manv));
         }
 
         private void btnToa_Click(object sender, EventArgs e)

@@ -14,7 +14,6 @@ namespace QLKTX.DATA
         {
             ACCOUNT = new HashSet<ACCOUNT>();
             HOADONLEPHI = new HashSet<HOADONLEPHI>();
-            KYLUAT = new HashSet<KYLUAT>();
             NGUOITHANSV = new HashSet<NGUOITHANSV>();
         }
 
@@ -28,7 +27,8 @@ namespace QLKTX.DATA
         [StringLength(30)]
         public string HOTEN { get; set; }
 
-        public DateTime? NAMSINH { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime NAMSINH { get; set; }
 
         [StringLength(10)]
         public string GIOITINH { get; set; }
@@ -60,9 +60,6 @@ namespace QLKTX.DATA
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADONLEPHI> HOADONLEPHI { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KYLUAT> KYLUAT { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NGUOITHANSV> NGUOITHANSV { get; set; }

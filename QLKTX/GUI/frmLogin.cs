@@ -10,6 +10,7 @@ namespace QLKTX.GUI
         KTXDBContext context = new KTXDBContext();
         public static string role = "";
         public static string userLogin = "";
+        public static string user = "";
         public frmLogin()
         {
             InitializeComponent();
@@ -22,11 +23,10 @@ namespace QLKTX.GUI
                 ACCOUNT user = context.ACCOUNT.FirstOrDefault(p => p.USER == txtUser.Text && p.PASS == txtPass.Text);
                 if (user != null)
                 {
-                    frmKTX_Main f = new frmKTX_Main(user.QUYEN, user.MANV, user.CCCD);
+                    frmKTX_Main f = new frmKTX_Main(user.QUYEN, user.MANV, user.CCCD, user.USER);
                     this.Hide();
-                    role = user.QUYEN;
-                    userLogin = user.MANV;
-                    userLogin = user.CCCD;
+                    
+                    
                     f.ShowDialog();
                     this.Show();
                 }
@@ -78,6 +78,13 @@ namespace QLKTX.GUI
             {
                 txtPass.UseSystemPasswordChar = true;
             }
+        }
+
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+            frm_ForgotPass f = new frm_ForgotPass();
+            f.ShowDialog();
+            this.Hide();
         }
     }
 }

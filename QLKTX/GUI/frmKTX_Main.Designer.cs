@@ -649,7 +649,7 @@ namespace QLKTX.GUI
             this.panel1.Controls.Add(this.iconCurrentHome);
             this.panel1.Location = new System.Drawing.Point(10, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(763, 54);
+            this.panel1.Size = new System.Drawing.Size(697, 54);
             this.panel1.TabIndex = 14;
             // 
             // lblTitleChildForm
@@ -670,7 +670,7 @@ namespace QLKTX.GUI
             this.pnKhungVien2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnKhungVien2.Location = new System.Drawing.Point(0, 44);
             this.pnKhungVien2.Name = "pnKhungVien2";
-            this.pnKhungVien2.Size = new System.Drawing.Size(763, 10);
+            this.pnKhungVien2.Size = new System.Drawing.Size(697, 10);
             this.pnKhungVien2.TabIndex = 14;
             // 
             // iconCurrentHome
@@ -693,9 +693,9 @@ namespace QLKTX.GUI
             this.pnAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(73)))), ((int)(((byte)(92)))));
             this.pnAvatar.Controls.Add(this.pnInfor);
-            this.pnAvatar.Location = new System.Drawing.Point(770, 7);
+            this.pnAvatar.Location = new System.Drawing.Point(706, 0);
             this.pnAvatar.Name = "pnAvatar";
-            this.pnAvatar.Size = new System.Drawing.Size(278, 162);
+            this.pnAvatar.Size = new System.Drawing.Size(342, 169);
             this.pnAvatar.TabIndex = 13;
             // 
             // pnInfor
@@ -703,18 +703,18 @@ namespace QLKTX.GUI
             this.pnInfor.Controls.Add(this.pnChucNangInfor);
             this.pnInfor.Controls.Add(this.pnTextInfor);
             this.pnInfor.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnInfor.Location = new System.Drawing.Point(3, 0);
+            this.pnInfor.Location = new System.Drawing.Point(0, 0);
             this.pnInfor.Name = "pnInfor";
-            this.pnInfor.Size = new System.Drawing.Size(275, 162);
+            this.pnInfor.Size = new System.Drawing.Size(342, 169);
             this.pnInfor.TabIndex = 13;
             // 
             // pnChucNangInfor
             // 
             this.pnChucNangInfor.Controls.Add(this.btnLogout);
             this.pnChucNangInfor.Controls.Add(this.btnChangePass);
-            this.pnChucNangInfor.Location = new System.Drawing.Point(0, 50);
+            this.pnChucNangInfor.Location = new System.Drawing.Point(69, 56);
             this.pnChucNangInfor.Name = "pnChucNangInfor";
-            this.pnChucNangInfor.Size = new System.Drawing.Size(275, 123);
+            this.pnChucNangInfor.Size = new System.Drawing.Size(275, 113);
             this.pnChucNangInfor.TabIndex = 1;
             // 
             // btnLogout
@@ -729,7 +729,7 @@ namespace QLKTX.GUI
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogout.IconSize = 30;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 58);
+            this.btnLogout.Location = new System.Drawing.Point(0, 56);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnLogout.Size = new System.Drawing.Size(275, 52);
@@ -767,18 +767,18 @@ namespace QLKTX.GUI
             // 
             this.pnTextInfor.Controls.Add(this.panel2);
             this.pnTextInfor.Controls.Add(this.btnTextInfor);
-            this.pnTextInfor.Location = new System.Drawing.Point(-1, 0);
+            this.pnTextInfor.Location = new System.Drawing.Point(0, 0);
             this.pnTextInfor.Name = "pnTextInfor";
-            this.pnTextInfor.Size = new System.Drawing.Size(276, 49);
+            this.pnTextInfor.Size = new System.Drawing.Size(342, 56);
             this.pnTextInfor.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 39);
+            this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(276, 10);
+            this.panel2.Size = new System.Drawing.Size(342, 10);
             this.panel2.TabIndex = 14;
             // 
             // btnTextInfor
@@ -786,16 +786,16 @@ namespace QLKTX.GUI
             this.btnTextInfor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(73)))), ((int)(((byte)(92)))));
             this.btnTextInfor.FlatAppearance.BorderSize = 0;
             this.btnTextInfor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTextInfor.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTextInfor.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTextInfor.ForeColor = System.Drawing.Color.White;
             this.btnTextInfor.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleDown;
             this.btnTextInfor.IconColor = System.Drawing.Color.White;
             this.btnTextInfor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTextInfor.IconSize = 30;
-            this.btnTextInfor.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnTextInfor.Location = new System.Drawing.Point(2, -7);
+            this.btnTextInfor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTextInfor.Location = new System.Drawing.Point(3, 2);
             this.btnTextInfor.Name = "btnTextInfor";
-            this.btnTextInfor.Size = new System.Drawing.Size(272, 59);
+            this.btnTextInfor.Size = new System.Drawing.Size(338, 59);
             this.btnTextInfor.TabIndex = 10;
             this.btnTextInfor.Text = "Họ và tên";
             this.btnTextInfor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -807,7 +807,7 @@ namespace QLKTX.GUI
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(73)))), ((int)(((byte)(92)))));
-            this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Teal;
+            this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Red;
             this.guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;

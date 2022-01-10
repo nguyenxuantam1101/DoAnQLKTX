@@ -30,7 +30,7 @@ namespace QLKTX.GUI
                     dgvNhanVien.Rows[index].Cells[0].Value = i;
                     dgvNhanVien.Rows[index].Cells[1].Value = item.MANV;
                     dgvNhanVien.Rows[index].Cells[2].Value = item.HOTENNV;
-                    dgvNhanVien.Rows[index].Cells[3].Value = item.NGAYSINH;
+                    dgvNhanVien.Rows[index].Cells[3].Value = item.NGAYSINH.ToString("dd/MM/yyyy");
                     dgvNhanVien.Rows[index].Cells[4].Value = item.GIOITINH;
                     dgvNhanVien.Rows[index].Cells[5].Value = item.SDT;
                     dgvNhanVien.Rows[index].Cells[6].Value = item.DIACHI;
@@ -418,7 +418,7 @@ namespace QLKTX.GUI
             oSheet.Name = sheetName;
 
             // Tạo phần Tiêu đề
-            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "G1");
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "J1");
 
             head.MergeCells = true;
 

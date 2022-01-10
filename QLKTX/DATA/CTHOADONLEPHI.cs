@@ -11,7 +11,7 @@ namespace QLKTX.DATA
     {
         public int ID { get; set; }
 
-        public int SOTHANG { get; set; }
+        public int? SOTHANG { get; set; }
 
         public int? MAHDLEPHI { get; set; }
 

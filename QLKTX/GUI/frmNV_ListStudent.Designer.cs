@@ -29,8 +29,8 @@ namespace QLKTX.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnOutputExcel = new Guna.UI2.WinForms.Guna2Button();
             this.cmbQuanHeVoiSV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtTenThanNhan = new Guna.UI2.WinForms.Guna2TextBox();
@@ -63,6 +63,8 @@ namespace QLKTX.GUI
             this.label3 = new System.Windows.Forms.Label();
             this.pnAddStudent = new System.Windows.Forms.Panel();
             this.gbAddSV = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.cmbToa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -93,6 +95,7 @@ namespace QLKTX.GUI
             this.NgayVaoKTX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayRaKTX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Truong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbViewListSV = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -121,7 +124,7 @@ namespace QLKTX.GUI
             this.btnOutputExcel.HoverState.FillColor = System.Drawing.SystemColors.ControlLight;
             this.btnOutputExcel.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnOutputExcel.HoverState.Parent = this.btnOutputExcel;
-            this.btnOutputExcel.Location = new System.Drawing.Point(696, 485);
+            this.btnOutputExcel.Location = new System.Drawing.Point(790, 512);
             this.btnOutputExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnOutputExcel.Name = "btnOutputExcel";
             this.btnOutputExcel.ShadowDecoration.Parent = this.btnOutputExcel;
@@ -150,11 +153,11 @@ namespace QLKTX.GUI
             "Mẹ",
             "Người Thân"});
             this.cmbQuanHeVoiSV.ItemsAppearance.Parent = this.cmbQuanHeVoiSV;
-            this.cmbQuanHeVoiSV.Location = new System.Drawing.Point(1360, 189);
+            this.cmbQuanHeVoiSV.Location = new System.Drawing.Point(1393, 185);
             this.cmbQuanHeVoiSV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbQuanHeVoiSV.Name = "cmbQuanHeVoiSV";
             this.cmbQuanHeVoiSV.ShadowDecoration.Parent = this.cmbQuanHeVoiSV;
-            this.cmbQuanHeVoiSV.Size = new System.Drawing.Size(239, 36);
+            this.cmbQuanHeVoiSV.Size = new System.Drawing.Size(280, 36);
             this.cmbQuanHeVoiSV.StartIndex = 0;
             this.cmbQuanHeVoiSV.TabIndex = 55;
             this.cmbQuanHeVoiSV.TextOffset = new System.Drawing.Point(8, 0);
@@ -177,7 +180,7 @@ namespace QLKTX.GUI
             this.txtTenThanNhan.ForeColor = System.Drawing.Color.Black;
             this.txtTenThanNhan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenThanNhan.HoverState.Parent = this.txtTenThanNhan;
-            this.txtTenThanNhan.Location = new System.Drawing.Point(1360, 128);
+            this.txtTenThanNhan.Location = new System.Drawing.Point(1393, 122);
             this.txtTenThanNhan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTenThanNhan.Name = "txtTenThanNhan";
             this.txtTenThanNhan.PasswordChar = '\0';
@@ -185,7 +188,7 @@ namespace QLKTX.GUI
             this.txtTenThanNhan.PlaceholderText = "Nhập họ tên thân nhân";
             this.txtTenThanNhan.SelectedText = "";
             this.txtTenThanNhan.ShadowDecoration.Parent = this.txtTenThanNhan;
-            this.txtTenThanNhan.Size = new System.Drawing.Size(237, 39);
+            this.txtTenThanNhan.Size = new System.Drawing.Size(280, 39);
             this.txtTenThanNhan.TabIndex = 54;
             this.txtTenThanNhan.TextOffset = new System.Drawing.Point(8, 0);
             // 
@@ -207,7 +210,7 @@ namespace QLKTX.GUI
             this.txtSDTThanNhan.ForeColor = System.Drawing.Color.Black;
             this.txtSDTThanNhan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDTThanNhan.HoverState.Parent = this.txtSDTThanNhan;
-            this.txtSDTThanNhan.Location = new System.Drawing.Point(1360, 243);
+            this.txtSDTThanNhan.Location = new System.Drawing.Point(1393, 242);
             this.txtSDTThanNhan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtSDTThanNhan.Name = "txtSDTThanNhan";
             this.txtSDTThanNhan.PasswordChar = '\0';
@@ -215,7 +218,7 @@ namespace QLKTX.GUI
             this.txtSDTThanNhan.PlaceholderText = "Nhập SĐT thân nhân";
             this.txtSDTThanNhan.SelectedText = "";
             this.txtSDTThanNhan.ShadowDecoration.Parent = this.txtSDTThanNhan;
-            this.txtSDTThanNhan.Size = new System.Drawing.Size(237, 39);
+            this.txtSDTThanNhan.Size = new System.Drawing.Size(280, 39);
             this.txtSDTThanNhan.TabIndex = 54;
             this.txtSDTThanNhan.TextOffset = new System.Drawing.Point(8, 0);
             // 
@@ -237,7 +240,7 @@ namespace QLKTX.GUI
             this.txtDiaChiTN.ForeColor = System.Drawing.Color.Black;
             this.txtDiaChiTN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiaChiTN.HoverState.Parent = this.txtDiaChiTN;
-            this.txtDiaChiTN.Location = new System.Drawing.Point(1360, 309);
+            this.txtDiaChiTN.Location = new System.Drawing.Point(1395, 310);
             this.txtDiaChiTN.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtDiaChiTN.Name = "txtDiaChiTN";
             this.txtDiaChiTN.PasswordChar = '\0';
@@ -245,7 +248,7 @@ namespace QLKTX.GUI
             this.txtDiaChiTN.PlaceholderText = "Nhập địa chỉ thân nhân";
             this.txtDiaChiTN.SelectedText = "";
             this.txtDiaChiTN.ShadowDecoration.Parent = this.txtDiaChiTN;
-            this.txtDiaChiTN.Size = new System.Drawing.Size(237, 39);
+            this.txtDiaChiTN.Size = new System.Drawing.Size(278, 39);
             this.txtDiaChiTN.TabIndex = 53;
             this.txtDiaChiTN.TextOffset = new System.Drawing.Point(8, 0);
             // 
@@ -255,7 +258,7 @@ namespace QLKTX.GUI
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(1116, 309);
+            this.label15.Location = new System.Drawing.Point(1140, 316);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(180, 28);
             this.label15.TabIndex = 52;
@@ -267,7 +270,7 @@ namespace QLKTX.GUI
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(1144, 242);
+            this.label11.Location = new System.Drawing.Point(1140, 253);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(152, 28);
             this.label11.TabIndex = 51;
@@ -279,7 +282,7 @@ namespace QLKTX.GUI
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(1139, 185);
+            this.label10.Location = new System.Drawing.Point(1140, 193);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(157, 28);
             this.label10.TabIndex = 50;
@@ -367,7 +370,7 @@ namespace QLKTX.GUI
             this.txtCCCD.ForeColor = System.Drawing.Color.Black;
             this.txtCCCD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCCCD.HoverState.Parent = this.txtCCCD;
-            this.txtCCCD.Location = new System.Drawing.Point(217, 64);
+            this.txtCCCD.Location = new System.Drawing.Point(220, 72);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.PasswordChar = '\0';
@@ -385,7 +388,7 @@ namespace QLKTX.GUI
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(1149, 131);
+            this.label9.Location = new System.Drawing.Point(1140, 134);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(147, 28);
             this.label9.TabIndex = 49;
@@ -397,7 +400,7 @@ namespace QLKTX.GUI
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(108, 72);
+            this.label7.Location = new System.Drawing.Point(26, 80);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 28);
             this.label7.TabIndex = 37;
@@ -421,7 +424,7 @@ namespace QLKTX.GUI
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(217, 302);
+            this.txtEmail.Location = new System.Drawing.Point(220, 310);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -439,7 +442,7 @@ namespace QLKTX.GUI
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(105, 310);
+            this.label2.Location = new System.Drawing.Point(26, 317);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 28);
             this.label2.TabIndex = 35;
@@ -461,11 +464,11 @@ namespace QLKTX.GUI
             this.cmbRoom.HoverState.Parent = this.cmbRoom;
             this.cmbRoom.ItemHeight = 30;
             this.cmbRoom.ItemsAppearance.Parent = this.cmbRoom;
-            this.cmbRoom.Location = new System.Drawing.Point(1360, 72);
+            this.cmbRoom.Location = new System.Drawing.Point(1508, 72);
             this.cmbRoom.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRoom.Name = "cmbRoom";
             this.cmbRoom.ShadowDecoration.Parent = this.cmbRoom;
-            this.cmbRoom.Size = new System.Drawing.Size(139, 36);
+            this.cmbRoom.Size = new System.Drawing.Size(165, 36);
             this.cmbRoom.TabIndex = 34;
             this.cmbRoom.TextOffset = new System.Drawing.Point(8, 0);
             // 
@@ -484,7 +487,7 @@ namespace QLKTX.GUI
             this.btnCancel.HoverState.FillColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancel.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.Location = new System.Drawing.Point(1208, 393);
+            this.btnCancel.Location = new System.Drawing.Point(1254, 393);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
@@ -508,7 +511,7 @@ namespace QLKTX.GUI
             this.btnUpdateSV.HoverState.FillColor = System.Drawing.SystemColors.ControlLight;
             this.btnUpdateSV.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnUpdateSV.HoverState.Parent = this.btnUpdateSV;
-            this.btnUpdateSV.Location = new System.Drawing.Point(670, 393);
+            this.btnUpdateSV.Location = new System.Drawing.Point(651, 393);
             this.btnUpdateSV.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateSV.Name = "btnUpdateSV";
             this.btnUpdateSV.ShadowDecoration.Parent = this.btnUpdateSV;
@@ -532,7 +535,7 @@ namespace QLKTX.GUI
             this.btnDeleteSV.HoverState.FillColor = System.Drawing.SystemColors.ControlLight;
             this.btnDeleteSV.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnDeleteSV.HoverState.Parent = this.btnDeleteSV;
-            this.btnDeleteSV.Location = new System.Drawing.Point(942, 393);
+            this.btnDeleteSV.Location = new System.Drawing.Point(961, 393);
             this.btnDeleteSV.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteSV.Name = "btnDeleteSV";
             this.btnDeleteSV.ShadowDecoration.Parent = this.btnDeleteSV;
@@ -544,8 +547,9 @@ namespace QLKTX.GUI
             // dtpBirthday
             // 
             this.dtpBirthday.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpBirthday.CustomFormat = "dd/MM/yyyy";
             this.dtpBirthday.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBirthday.Location = new System.Drawing.Point(807, 128);
             this.dtpBirthday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpBirthday.Name = "dtpBirthday";
@@ -567,7 +571,7 @@ namespace QLKTX.GUI
             this.btnAddSV.HoverState.FillColor = System.Drawing.SystemColors.ControlLight;
             this.btnAddSV.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnAddSV.HoverState.Parent = this.btnAddSV;
-            this.btnAddSV.Location = new System.Drawing.Point(398, 393);
+            this.btnAddSV.Location = new System.Drawing.Point(321, 393);
             this.btnAddSV.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddSV.Name = "btnAddSV";
             this.btnAddSV.ShadowDecoration.Parent = this.btnAddSV;
@@ -656,7 +660,7 @@ namespace QLKTX.GUI
             this.txtAddressSV.ForeColor = System.Drawing.Color.Black;
             this.txtAddressSV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddressSV.HoverState.Parent = this.txtAddressSV;
-            this.txtAddressSV.Location = new System.Drawing.Point(217, 237);
+            this.txtAddressSV.Location = new System.Drawing.Point(220, 245);
             this.txtAddressSV.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtAddressSV.Name = "txtAddressSV";
             this.txtAddressSV.PasswordChar = '\0';
@@ -686,7 +690,7 @@ namespace QLKTX.GUI
             this.txtStudentName.ForeColor = System.Drawing.Color.Black;
             this.txtStudentName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStudentName.HoverState.Parent = this.txtStudentName;
-            this.txtStudentName.Location = new System.Drawing.Point(217, 178);
+            this.txtStudentName.Location = new System.Drawing.Point(220, 186);
             this.txtStudentName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.PasswordChar = '\0';
@@ -716,7 +720,7 @@ namespace QLKTX.GUI
             this.txtStudentID.ForeColor = System.Drawing.Color.Black;
             this.txtStudentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStudentID.HoverState.Parent = this.txtStudentID;
-            this.txtStudentID.Location = new System.Drawing.Point(217, 123);
+            this.txtStudentID.Location = new System.Drawing.Point(220, 131);
             this.txtStudentID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.PasswordChar = '\0';
@@ -734,7 +738,7 @@ namespace QLKTX.GUI
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(93, 185);
+            this.label1.Location = new System.Drawing.Point(26, 197);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 28);
             this.label1.TabIndex = 0;
@@ -746,7 +750,7 @@ namespace QLKTX.GUI
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(26, 131);
+            this.label3.Location = new System.Drawing.Point(26, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 28);
             this.label3.TabIndex = 0;
@@ -782,6 +786,7 @@ namespace QLKTX.GUI
             this.gbAddSV.Controls.Add(this.label7);
             this.gbAddSV.Controls.Add(this.txtEmail);
             this.gbAddSV.Controls.Add(this.label2);
+            this.gbAddSV.Controls.Add(this.cmbToa);
             this.gbAddSV.Controls.Add(this.cmbRoom);
             this.gbAddSV.Controls.Add(this.btnCancel);
             this.gbAddSV.Controls.Add(this.btnDeleteSV);
@@ -795,6 +800,7 @@ namespace QLKTX.GUI
             this.gbAddSV.Controls.Add(this.txtStudentName);
             this.gbAddSV.Controls.Add(this.txtStudentID);
             this.gbAddSV.Controls.Add(this.label1);
+            this.gbAddSV.Controls.Add(this.label4);
             this.gbAddSV.Controls.Add(this.label3);
             this.gbAddSV.Controls.Add(this.label5);
             this.gbAddSV.Controls.Add(this.label12);
@@ -814,13 +820,51 @@ namespace QLKTX.GUI
             this.gbAddSV.TabIndex = 1;
             this.gbAddSV.Text = "Thêm Sinh Viên";
             // 
+            // cmbToa
+            // 
+            this.cmbToa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbToa.BackColor = System.Drawing.Color.Transparent;
+            this.cmbToa.BorderColor = System.Drawing.Color.Gray;
+            this.cmbToa.BorderRadius = 5;
+            this.cmbToa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbToa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbToa.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbToa.FocusedState.Parent = this.cmbToa;
+            this.cmbToa.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmbToa.ForeColor = System.Drawing.Color.Black;
+            this.cmbToa.FormattingEnabled = true;
+            this.cmbToa.HoverState.Parent = this.cmbToa;
+            this.cmbToa.ItemHeight = 30;
+            this.cmbToa.ItemsAppearance.Parent = this.cmbToa;
+            this.cmbToa.Location = new System.Drawing.Point(1227, 72);
+            this.cmbToa.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbToa.Name = "cmbToa";
+            this.cmbToa.ShadowDecoration.Parent = this.cmbToa;
+            this.cmbToa.Size = new System.Drawing.Size(139, 36);
+            this.cmbToa.TabIndex = 34;
+            this.cmbToa.TextOffset = new System.Drawing.Point(8, 0);
+            this.cmbToa.SelectedIndexChanged += new System.EventHandler(this.cmbToa_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(1140, 77);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 28);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Tòa";
+            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(1224, 72);
+            this.label5.Location = new System.Drawing.Point(1390, 77);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 28);
@@ -833,7 +877,7 @@ namespace QLKTX.GUI
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(665, 248);
+            this.label12.Location = new System.Drawing.Point(568, 248);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(80, 28);
             this.label12.TabIndex = 0;
@@ -845,7 +889,7 @@ namespace QLKTX.GUI
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(91, 245);
+            this.label13.Location = new System.Drawing.Point(26, 256);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(78, 28);
             this.label13.TabIndex = 0;
@@ -857,7 +901,7 @@ namespace QLKTX.GUI
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(695, 192);
+            this.label14.Location = new System.Drawing.Point(568, 185);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 28);
             this.label14.TabIndex = 0;
@@ -868,7 +912,7 @@ namespace QLKTX.GUI
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(643, 134);
+            this.label16.Location = new System.Drawing.Point(568, 133);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(102, 28);
             this.label16.TabIndex = 0;
@@ -879,7 +923,7 @@ namespace QLKTX.GUI
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(650, 74);
+            this.label17.Location = new System.Drawing.Point(568, 77);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(95, 28);
             this.label17.TabIndex = 0;
@@ -908,7 +952,7 @@ namespace QLKTX.GUI
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(17, 496);
+            this.label6.Location = new System.Drawing.Point(21, 542);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(143, 25);
             this.label6.TabIndex = 52;
@@ -933,7 +977,7 @@ namespace QLKTX.GUI
             this.txtSearchSV.ForeColor = System.Drawing.Color.Black;
             this.txtSearchSV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearchSV.HoverState.Parent = this.txtSearchSV;
-            this.txtSearchSV.Location = new System.Drawing.Point(1111, 485);
+            this.txtSearchSV.Location = new System.Drawing.Point(1145, 512);
             this.txtSearchSV.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearchSV.Name = "txtSearchSV";
             this.txtSearchSV.PasswordChar = '\0';
@@ -941,7 +985,7 @@ namespace QLKTX.GUI
             this.txtSearchSV.PlaceholderText = "Tìm kiếm sinh viên";
             this.txtSearchSV.SelectedText = "";
             this.txtSearchSV.ShadowDecoration.Parent = this.txtSearchSV;
-            this.txtSearchSV.Size = new System.Drawing.Size(388, 55);
+            this.txtSearchSV.Size = new System.Drawing.Size(445, 55);
             this.txtSearchSV.TabIndex = 50;
             this.txtSearchSV.TextOffset = new System.Drawing.Point(8, 0);
             this.txtSearchSV.TextChanged += new System.EventHandler(this.txtSearchSV_TextChanged);
@@ -955,7 +999,7 @@ namespace QLKTX.GUI
             this.guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(0, 321);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(0, 334);
             this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
@@ -973,14 +1017,14 @@ namespace QLKTX.GUI
             this.dgvThanNhan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThanNhan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.dgvThanNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThanNhan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThanNhan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvThanNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThanNhan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.HOTENTHANNHAN,
@@ -1057,7 +1101,7 @@ namespace QLKTX.GUI
             this.gbDienNuoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbDienNuoc.Name = "gbDienNuoc";
             this.gbDienNuoc.ShadowDecoration.Parent = this.gbDienNuoc;
-            this.gbDienNuoc.Size = new System.Drawing.Size(1690, 322);
+            this.gbDienNuoc.Size = new System.Drawing.Size(1690, 336);
             this.gbDienNuoc.TabIndex = 54;
             this.gbDienNuoc.Text = "Danh Sách Sinh Viên";
             // 
@@ -1071,14 +1115,14 @@ namespace QLKTX.GUI
             this.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -1093,6 +1137,7 @@ namespace QLKTX.GUI
             this.NgayVaoKTX,
             this.NgayRaKTX,
             this.Phong,
+            this.Column1,
             this.Truong,
             this.TrangThai});
             this.dgvStudent.Location = new System.Drawing.Point(0, 39);
@@ -1102,7 +1147,7 @@ namespace QLKTX.GUI
             this.dgvStudent.RowHeadersVisible = false;
             this.dgvStudent.RowHeadersWidth = 51;
             this.dgvStudent.RowTemplate.Height = 29;
-            this.dgvStudent.Size = new System.Drawing.Size(1690, 281);
+            this.dgvStudent.Size = new System.Drawing.Size(1690, 295);
             this.dgvStudent.TabIndex = 40;
             this.dgvStudent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudent_CellClick);
             // 
@@ -1190,6 +1235,13 @@ namespace QLKTX.GUI
             this.Phong.Name = "Phong";
             this.Phong.ReadOnly = true;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tòa";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // Truong
             // 
             this.Truong.HeaderText = "Trường";
@@ -1224,7 +1276,7 @@ namespace QLKTX.GUI
             "Đã Chuyển Đi",
             "Tất Cả"});
             this.cmbViewListSV.ItemsAppearance.Parent = this.cmbViewListSV;
-            this.cmbViewListSV.Location = new System.Drawing.Point(234, 485);
+            this.cmbViewListSV.Location = new System.Drawing.Point(238, 531);
             this.cmbViewListSV.Margin = new System.Windows.Forms.Padding(4);
             this.cmbViewListSV.Name = "cmbViewListSV";
             this.cmbViewListSV.ShadowDecoration.Parent = this.cmbViewListSV;
@@ -1313,6 +1365,8 @@ namespace QLKTX.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHITHANNHAN;
         private Guna.UI2.WinForms.Guna2GroupBox gbDienNuoc;
         private System.Windows.Forms.DataGridView dgvStudent;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbToa;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MSSV;
@@ -1325,6 +1379,7 @@ namespace QLKTX.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayVaoKTX;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayRaKTX;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Truong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }

@@ -126,8 +126,9 @@ namespace QLKTX.GUI
             this.lblForgotPassword.Location = new System.Drawing.Point(228, 406);
             this.lblForgotPassword.Name = "lblForgotPassword";
             this.lblForgotPassword.Size = new System.Drawing.Size(114, 17);
-            this.lblForgotPassword.TabIndex = 3;
+            this.lblForgotPassword.TabIndex = 10;
             this.lblForgotPassword.Text = "Forgot Password";
+            this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
             // 
             // label1
             // 
@@ -145,7 +146,7 @@ namespace QLKTX.GUI
             this.txtPass.Animated = true;
             this.txtPass.BorderRadius = 6;
             this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPass.DefaultText = "";
+            this.txtPass.DefaultText = "admin";
             this.txtPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -165,6 +166,7 @@ namespace QLKTX.GUI
             this.txtPass.PasswordChar = '\0';
             this.txtPass.PlaceholderText = "Password";
             this.txtPass.SelectedText = "";
+            this.txtPass.SelectionStart = 5;
             this.txtPass.ShadowDecoration.Parent = this.txtPass;
             this.txtPass.Size = new System.Drawing.Size(316, 36);
             this.txtPass.TabIndex = 2;
@@ -176,7 +178,7 @@ namespace QLKTX.GUI
             this.txtUser.Animated = true;
             this.txtUser.BorderRadius = 6;
             this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUser.DefaultText = "";
+            this.txtUser.DefaultText = "admin";
             this.txtUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -193,6 +195,7 @@ namespace QLKTX.GUI
             this.txtUser.PasswordChar = '\0';
             this.txtUser.PlaceholderText = "User";
             this.txtUser.SelectedText = "";
+            this.txtUser.SelectionStart = 5;
             this.txtUser.ShadowDecoration.Parent = this.txtUser;
             this.txtUser.Size = new System.Drawing.Size(316, 36);
             this.txtUser.TabIndex = 1;

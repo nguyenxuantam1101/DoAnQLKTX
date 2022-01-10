@@ -29,8 +29,6 @@ namespace QLKTX.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabLePhi = new System.Windows.Forms.TabControl();
             this.tabDienNuoc = new System.Windows.Forms.TabPage();
             this.gbDienNuoc = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -193,7 +191,7 @@ namespace QLKTX.GUI
             this.txtMaHD.PlaceholderText = "";
             this.txtMaHD.SelectedText = "";
             this.txtMaHD.ShadowDecoration.Parent = this.txtMaHD;
-            this.txtMaHD.Size = new System.Drawing.Size(135, 40);
+            this.txtMaHD.Size = new System.Drawing.Size(75, 40);
             this.txtMaHD.TabIndex = 44;
             this.txtMaHD.TextOffset = new System.Drawing.Point(8, 0);
             // 
@@ -207,7 +205,7 @@ namespace QLKTX.GUI
             this.cmbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBuilding.FocusedColor = System.Drawing.Color.Empty;
             this.cmbBuilding.FocusedState.Parent = this.cmbBuilding;
-            this.cmbBuilding.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBuilding.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cmbBuilding.ForeColor = System.Drawing.Color.Black;
             this.cmbBuilding.FormattingEnabled = true;
             this.cmbBuilding.HoverState.Parent = this.cmbBuilding;
@@ -217,9 +215,10 @@ namespace QLKTX.GUI
             this.cmbBuilding.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbBuilding.Name = "cmbBuilding";
             this.cmbBuilding.ShadowDecoration.Parent = this.cmbBuilding;
-            this.cmbBuilding.Size = new System.Drawing.Size(135, 36);
+            this.cmbBuilding.Size = new System.Drawing.Size(164, 36);
             this.cmbBuilding.TabIndex = 43;
             this.cmbBuilding.TextOffset = new System.Drawing.Point(8, 0);
+            this.cmbBuilding.SelectedIndexChanged += new System.EventHandler(this.cmbBuilding_SelectedIndexChanged);
             // 
             // cmbRoom
             // 
@@ -231,7 +230,7 @@ namespace QLKTX.GUI
             this.cmbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRoom.FocusedColor = System.Drawing.Color.Empty;
             this.cmbRoom.FocusedState.Parent = this.cmbRoom;
-            this.cmbRoom.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRoom.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cmbRoom.ForeColor = System.Drawing.Color.Black;
             this.cmbRoom.FormattingEnabled = true;
             this.cmbRoom.HoverState.Parent = this.cmbRoom;
@@ -241,7 +240,7 @@ namespace QLKTX.GUI
             this.cmbRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbRoom.Name = "cmbRoom";
             this.cmbRoom.ShadowDecoration.Parent = this.cmbRoom;
-            this.cmbRoom.Size = new System.Drawing.Size(135, 36);
+            this.cmbRoom.Size = new System.Drawing.Size(164, 36);
             this.cmbRoom.TabIndex = 43;
             this.cmbRoom.TextOffset = new System.Drawing.Point(8, 0);
             // 
@@ -471,14 +470,6 @@ namespace QLKTX.GUI
             this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoaDon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.dgvHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHD,
@@ -655,9 +646,9 @@ namespace QLKTX.GUI
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(48, 451);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(112, 28);
+            this.label15.Size = new System.Drawing.Size(117, 28);
             this.label15.TabIndex = 39;
-            this.label15.Text = "Trạng Thái";
+            this.label15.Text = "Trạng Thái:";
             // 
             // lbNguoiLap
             // 
@@ -678,9 +669,9 @@ namespace QLKTX.GUI
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(49, 279);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 28);
+            this.label11.Size = new System.Drawing.Size(116, 28);
             this.label11.TabIndex = 40;
-            this.label11.Text = "Người Lập";
+            this.label11.Text = "Người Lập:";
             // 
             // lbTongTien
             // 
@@ -701,9 +692,9 @@ namespace QLKTX.GUI
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(48, 407);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(107, 28);
+            this.label14.Size = new System.Drawing.Size(112, 28);
             this.label14.TabIndex = 41;
-            this.label14.Text = "Tổng Tiền";
+            this.label14.Text = "Tổng Tiền:";
             // 
             // lbCCCD
             // 
@@ -724,9 +715,9 @@ namespace QLKTX.GUI
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(48, 238);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 28);
+            this.label10.Size = new System.Drawing.Size(66, 28);
             this.label10.TabIndex = 42;
-            this.label10.Text = "CCCD";
+            this.label10.Text = "CCCD:";
             // 
             // lbHanCuoi
             // 
@@ -747,9 +738,9 @@ namespace QLKTX.GUI
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(48, 362);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(98, 28);
+            this.label13.Size = new System.Drawing.Size(103, 28);
             this.label13.TabIndex = 43;
-            this.label13.Text = "Hạn Cuối";
+            this.label13.Text = "Hạn Cuối:";
             // 
             // lbHoTenSV
             // 
@@ -770,9 +761,9 @@ namespace QLKTX.GUI
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(48, 193);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 28);
+            this.label9.Size = new System.Drawing.Size(113, 28);
             this.label9.TabIndex = 44;
-            this.label9.Text = "Họ Tên SV";
+            this.label9.Text = "Họ Tên SV:";
             // 
             // lbNgayLap
             // 
@@ -793,9 +784,9 @@ namespace QLKTX.GUI
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(48, 320);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(101, 28);
+            this.label12.Size = new System.Drawing.Size(106, 28);
             this.label12.TabIndex = 45;
-            this.label12.Text = "Ngày Lập";
+            this.label12.Text = "Ngày Lập:";
             // 
             // lbMaHD
             // 
@@ -816,9 +807,9 @@ namespace QLKTX.GUI
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(48, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 28);
+            this.label4.Size = new System.Drawing.Size(83, 28);
             this.label4.TabIndex = 46;
-            this.label4.Text = "Mã HĐ";
+            this.label4.Text = "Mã HĐ:";
             // 
             // txtTimKiemLePhi
             // 
@@ -981,14 +972,6 @@ namespace QLKTX.GUI
             this.dgvBangGia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBangGia.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.dgvBangGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBangGia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBangGia.ColumnHeadersHeight = 40;
             this.dgvBangGia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TENDICHVU,

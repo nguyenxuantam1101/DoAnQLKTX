@@ -30,6 +30,13 @@ namespace QLKTX.GUI
             this.cmbBuilding.DisplayMember = "TENTOA";
             this.cmbBuilding.ValueMember = "MATOA";
         }
+        private void cmbBuilding_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string a = cmbBuilding.SelectedValue.ToString();
+            List<PHONGSV> listRoom = context.PHONGSV.Where(p => p.MATOA.Equals(a)).ToList();
+            FillRoomCombobox(listRoom);
+            cmbRoom.Enabled = true;
+        }
         private void BindGrid(List<HOADONDIENNUOC> listHoaDon)
         {           
             dgvHoaDon.Rows.Clear();
@@ -72,12 +79,13 @@ namespace QLKTX.GUI
             {
                 //Tab hóa đơn điện nước
                 List<TOANHA> listBuilding = context.TOANHA.ToList();
-                List<PHONGSV> listRoom = context.PHONGSV.ToList();
                 List<HOADONDIENNUOC> listHoaDon = context.HOADONDIENNUOC.ToList();
-                FillRoomCombobox(listRoom);
                 FillBuildingCombobox(listBuilding);
                 BindGrid(listHoaDon);
+                List<PHONGSV> listRoom = context.PHONGSV.ToList();
+                FillRoomCombobox(listRoom);
                 setNull();
+                cmbRoom.Enabled = false;
                 //Tab Bảng giá điện nước
                 List<BANGGIADIENNUOC> banggia = context.BANGGIADIENNUOC.ToList();
                 BindGridBangGia(banggia);
@@ -192,7 +200,6 @@ namespace QLKTX.GUI
             setNull();
         }
 
-
         private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -210,6 +217,7 @@ namespace QLKTX.GUI
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         //Code xử lý Tab Bảng hóa đơn lệ phí
         private void setNullLePhi()
         {
@@ -227,17 +235,19 @@ namespace QLKTX.GUI
             dgvDSLePhi.Rows.Clear();
             foreach (var item in lephi)
             {
+                if (item.TRANGTHAI == "Chưa Thanh Toán")
                 {
                     dgvDSLePhi.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
                     int index = dgvDSLePhi.Rows.Add();
                     dgvDSLePhi.Rows[index].Cells[0].Value = item.MAHDLEPHI;
-                    dgvDSLePhi.Rows[index].Cells[1].Value = item.SINHVIEN.HOTEN;
-                    dgvDSLePhi.Rows[index].Cells[2].Value = item.SINHVIEN.CCCD;
-                    dgvDSLePhi.Rows[index].Cells[3].Value = item.MANV!=null?item.NHANVIEN.HOTENNV:"Chưa có";
+                    dgvDSLePhi.Rows[index].Cells[1].Value =item.CCCD!=null? item.SINHVIEN.HOTEN:"";
+                    dgvDSLePhi.Rows[index].Cells[2].Value = item.CCCD != null?item.SINHVIEN.CCCD:"";
+                    dgvDSLePhi.Rows[index].Cells[3].Value = item.MANV!=null?item.NHANVIEN.HOTENNV:"";
                     dgvDSLePhi.Rows[index].Cells[4].Value = item.NGAYLAP;
                     CTHOADONLEPHI ctietlephi = context.CTHOADONLEPHI.FirstOrDefault(p => p.MAHDLEPHI == item.MAHDLEPHI);
                     dgvDSLePhi.Rows[index].Cells[5].Value = item.HANCUOI;
-                    dgvDSLePhi.Rows[index].Cells[6].Value = ctietlephi.SOTHANG*ctietlephi.PHONGSV.GIAPHONG+" VNĐ";
+                    if(ctietlephi!=null)
+                        dgvDSLePhi.Rows[index].Cells[6].Value = ctietlephi.SOTHANG*ctietlephi.PHONGSV.GIAPHONG+" VNĐ";
                     dgvDSLePhi.Rows[index].Cells[7].Value = item.TRANGTHAI;
                 }
             }
@@ -272,17 +282,19 @@ namespace QLKTX.GUI
                 dgvDSLePhi.Rows.Clear();
                 foreach (var item in listLePhi)
                 {
-                    if (item.TRANGTHAI == "Chưa Thanh Toán")
+                    if (item.TRANGTHAI == "Chưa Thanh Toán")
                     {
                         int index = dgvDSLePhi.Rows.Add();
                         dgvDSLePhi.Rows[index].Cells[0].Value = item.MAHDLEPHI;
-                        dgvDSLePhi.Rows[index].Cells[1].Value = item.SINHVIEN.HOTEN;
-                        dgvDSLePhi.Rows[index].Cells[2].Value = item.SINHVIEN.CCCD;
-                        dgvDSLePhi.Rows[index].Cells[3].Value = item.MANV == null ? item.NHANVIEN.HOTENNV : "";
+                        dgvDSLePhi.Rows[index].Cells[1].Value = item.CCCD != null ? item.SINHVIEN.HOTEN : "";
+                        dgvDSLePhi.Rows[index].Cells[2].Value = item.CCCD != null ? item.SINHVIEN.CCCD : "";
+                        dgvDSLePhi.Rows[index].Cells[3].Value = item.MANV != null ? item.NHANVIEN.HOTENNV : "";
                         dgvDSLePhi.Rows[index].Cells[4].Value = item.NGAYLAP;
                         dgvDSLePhi.Rows[index].Cells[5].Value = item.HANCUOI;
-                        dgvDSLePhi.Rows[index].Cells[6].Value = item.TONGTIEN;
                         dgvDSLePhi.Rows[index].Cells[7].Value = item.TRANGTHAI;
+                        CTHOADONLEPHI ctietlephi = context.CTHOADONLEPHI.FirstOrDefault(p => p.MAHDLEPHI == item.MAHDLEPHI);
+                        if (ctietlephi != null)
+                            dgvDSLePhi.Rows[index].Cells[6].Value = ctietlephi.SOTHANG * ctietlephi.PHONGSV.GIAPHONG + " VNĐ";
                     }
                 }
             }
@@ -295,9 +307,9 @@ namespace QLKTX.GUI
                     {
                         int index = dgvDSLePhi.Rows.Add();
                         dgvDSLePhi.Rows[index].Cells[0].Value = item.MAHDLEPHI;
-                        dgvDSLePhi.Rows[index].Cells[1].Value = item.SINHVIEN.HOTEN;
-                        dgvDSLePhi.Rows[index].Cells[2].Value = item.SINHVIEN.CCCD;
-                        dgvDSLePhi.Rows[index].Cells[3].Value = item.MANV == null? item.NHANVIEN.HOTENNV:"" ;
+                        dgvDSLePhi.Rows[index].Cells[1].Value = item.CCCD != null ? item.SINHVIEN.HOTEN : "";
+                        dgvDSLePhi.Rows[index].Cells[2].Value = item.CCCD != null ? item.SINHVIEN.CCCD : "";
+                        dgvDSLePhi.Rows[index].Cells[3].Value = item.MANV != null ? item.NHANVIEN.HOTENNV : "";
                         dgvDSLePhi.Rows[index].Cells[4].Value = item.NGAYLAP;
                         dgvDSLePhi.Rows[index].Cells[5].Value = item.HANCUOI;
                         dgvDSLePhi.Rows[index].Cells[6].Value = item.TONGTIEN;
@@ -310,18 +322,17 @@ namespace QLKTX.GUI
                 dgvDSLePhi.Rows.Clear();
                 foreach (var item in listLePhi)
                 {
-                    if (item.TRANGTHAI == "Đã Thanh Toán")
-                    {
-                        int index = dgvDSLePhi.Rows.Add();
-                        dgvDSLePhi.Rows[index].Cells[0].Value = item.MAHDLEPHI;
-                        dgvDSLePhi.Rows[index].Cells[1].Value = item.SINHVIEN.HOTEN;
-                        dgvDSLePhi.Rows[index].Cells[2].Value = item.SINHVIEN.CCCD;
-                        dgvDSLePhi.Rows[index].Cells[3].Value = item.MANV == null ? item.NHANVIEN.HOTENNV : "";
-                        dgvDSLePhi.Rows[index].Cells[4].Value = item.NGAYLAP;
-                        dgvDSLePhi.Rows[index].Cells[5].Value = item.HANCUOI;
-                        dgvDSLePhi.Rows[index].Cells[6].Value = item.TONGTIEN;
-                        dgvDSLePhi.Rows[index].Cells[7].Value = item.TRANGTHAI;
-                    }
+                    int index = dgvDSLePhi.Rows.Add();
+                    dgvDSLePhi.Rows[index].Cells[0].Value = item.MAHDLEPHI;
+                    dgvDSLePhi.Rows[index].Cells[1].Value = item.CCCD != null ? item.SINHVIEN.HOTEN : "";
+                    dgvDSLePhi.Rows[index].Cells[2].Value = item.CCCD != null ? item.SINHVIEN.CCCD : "";
+                    dgvDSLePhi.Rows[index].Cells[3].Value = item.MANV != null ? item.NHANVIEN.HOTENNV : "";
+                    dgvDSLePhi.Rows[index].Cells[4].Value = item.NGAYLAP;
+                    dgvDSLePhi.Rows[index].Cells[5].Value = item.HANCUOI;
+                    CTHOADONLEPHI ctietlephi = context.CTHOADONLEPHI.FirstOrDefault(p => p.MAHDLEPHI == item.MAHDLEPHI);
+                    if (ctietlephi != null)
+                        dgvDSLePhi.Rows[index].Cells[6].Value = ctietlephi.SOTHANG * ctietlephi.PHONGSV.GIAPHONG + " VNĐ";
+                    dgvDSLePhi.Rows[index].Cells[7].Value = item.TRANGTHAI;
                 }
             }
         }
@@ -359,7 +370,10 @@ namespace QLKTX.GUI
                 DialogResult noti = MessageBox.Show("Bạn có muốn thanh toán?", "Thông Báo", MessageBoxButtons.YesNo);
                 if (noti == DialogResult.Yes)
                 {
+
+                    CTHOADONLEPHI dbTongTien = context.CTHOADONLEPHI.FirstOrDefault(p => p.MAHDLEPHI.ToString() == lbMaHD.Text);
                     hoadon.TRANGTHAI = "Đã Thanh Toán";
+                    hoadon.TONGTIEN = dbTongTien.SOTHANG * dbTongTien.PHONGSV.GIAPHONG;
                     context.SaveChanges();
                     MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK);
                     reloadDGVLePhi();
@@ -399,7 +413,7 @@ namespace QLKTX.GUI
         }
         private void btnUpdateGia_Click(object sender, EventArgs e)
         {
-            if (txtGiaThanh.Text == "")
+            if (txtGiaThanh.Text != "")
             {
                 BANGGIADIENNUOC dbUpdate = context.BANGGIADIENNUOC.FirstOrDefault(p => p.MABANGGIA == cmbTenDichVu.SelectedValue.ToString());
                 if (dbUpdate != null)
@@ -408,7 +422,7 @@ namespace QLKTX.GUI
                     context.SaveChanges(); //Lưu thay đổi
                     reloadDGVBangGia();
                     txtGiaThanh.Text = "";
-                    MessageBox.Show("Cập nhật dữ liệu thành công!”.", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Cập nhật dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK);
                 }
                 else
                 {
@@ -437,5 +451,7 @@ namespace QLKTX.GUI
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

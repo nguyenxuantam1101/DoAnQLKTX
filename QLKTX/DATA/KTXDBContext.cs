@@ -14,13 +14,10 @@ namespace QLKTX.DATA
 
         public virtual DbSet<ACCOUNT> ACCOUNT { get; set; }
         public virtual DbSet<BANGGIADIENNUOC> BANGGIADIENNUOC { get; set; }
-        public virtual DbSet<CTKYLUAT> CTKYLUAT { get; set; }
         public virtual DbSet<CTHOADONDIENNUOC> CTHOADONDIENNUOC { get; set; }
         public virtual DbSet<CTHOADONLEPHI> CTHOADONLEPHI { get; set; }
         public virtual DbSet<HOADONDIENNUOC> HOADONDIENNUOC { get; set; }
         public virtual DbSet<HOADONLEPHI> HOADONLEPHI { get; set; }
-        public virtual DbSet<KYLUAT> KYLUAT { get; set; }
-        public virtual DbSet<NOIQUYKTX> NOIQUYKTX { get; set; }
         public virtual DbSet<NGUOITHANSV> NGUOITHANSV { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIEN { get; set; }
         public virtual DbSet<PHONGSV> PHONGSV { get; set; }
@@ -50,14 +47,6 @@ namespace QLKTX.DATA
                 .Property(e => e.MABANGGIA)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<CTKYLUAT>()
-                .Property(e => e.MAKYLUAT)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CTKYLUAT>()
-                .Property(e => e.MANOIQUY)
-                .IsUnicode(false);
-
             modelBuilder.Entity<CTHOADONDIENNUOC>()
                 .Property(e => e.MABANGGIA)
                 .IsUnicode(false);
@@ -80,22 +69,6 @@ namespace QLKTX.DATA
 
             modelBuilder.Entity<HOADONLEPHI>()
                 .Property(e => e.CCCD)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<KYLUAT>()
-                .Property(e => e.MAKYLUAT)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<KYLUAT>()
-                .Property(e => e.CCCD)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<KYLUAT>()
-                .Property(e => e.MANV)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<NOIQUYKTX>()
-                .Property(e => e.MANOIQUY)
                 .IsUnicode(false);
 
             modelBuilder.Entity<NGUOITHANSV>()
@@ -148,10 +121,6 @@ namespace QLKTX.DATA
 
             modelBuilder.Entity<TOANHA>()
                 .Property(e => e.MATOA)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TOANHA>()
-                .Property(e => e.TENTOA)
                 .IsUnicode(false);
 
             modelBuilder.Entity<TRUONGHOC>()

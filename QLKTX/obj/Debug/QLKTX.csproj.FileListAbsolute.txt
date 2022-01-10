@@ -235,7 +235,6 @@ D:\GitHub\DoAnQLKTX\QLKTX\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources
 D:\GitHub\DoAnQLKTX\QLKTX\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\GitHub\DoAnQLKTX\QLKTX\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\GitHub\DoAnQLKTX\QLKTX\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.csproj.AssemblyReference.cache
 D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.GUI.frmLogin.resources
 D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.GUI.frmKTX_Main.resources
 D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.GUI.frmNV_AddBuilding.resources
@@ -254,3 +253,7 @@ D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\RdlCompile.compiled
 D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.csproj.CoreCompileInputs.cache
 D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.exe
 D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.pdb
+D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.GUI.frmThongKeHDDienNuoc.resources
+D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.GUI.frm_ForgotPass.resources
+D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.GUI.frmChangePass.resources
+D:\GitHub\DoAnQLKTX\QLKTX\obj\Debug\QLKTX.csproj.AssemblyReference.cache

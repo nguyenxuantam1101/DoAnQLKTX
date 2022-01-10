@@ -36,21 +36,18 @@ namespace QLKTX.GUI
             this.cmbViewListAcc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbQuyen = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtSearchAcc = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPassAcc = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtAccount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtFullName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvQLAccount = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLAccount)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +80,7 @@ namespace QLKTX.GUI
             this.btnUpdate.HoverState.FillColor = System.Drawing.SystemColors.ControlLight;
             this.btnUpdate.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(58, 508);
+            this.btnUpdate.Location = new System.Drawing.Point(58, 458);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
@@ -100,7 +97,6 @@ namespace QLKTX.GUI
             this.guna2GroupBox1.Controls.Add(this.cmbViewListAcc);
             this.guna2GroupBox1.Controls.Add(this.cmbQuyen);
             this.guna2GroupBox1.Controls.Add(this.txtSearchAcc);
-            this.guna2GroupBox1.Controls.Add(this.txtPassAcc);
             this.guna2GroupBox1.Controls.Add(this.txtAccount);
             this.guna2GroupBox1.Controls.Add(this.txtFullName);
             this.guna2GroupBox1.Controls.Add(this.label6);
@@ -108,7 +104,6 @@ namespace QLKTX.GUI
             this.guna2GroupBox1.Controls.Add(this.btnUpdate);
             this.guna2GroupBox1.Controls.Add(this.label1);
             this.guna2GroupBox1.Controls.Add(this.label2);
-            this.guna2GroupBox1.Controls.Add(this.label3);
             this.guna2GroupBox1.Controls.Add(this.label4);
             this.guna2GroupBox1.Controls.Add(this.label5);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(132)))), ((int)(((byte)(127)))));
@@ -170,7 +165,7 @@ namespace QLKTX.GUI
             "MANAGE",
             "USER"});
             this.cmbQuyen.ItemsAppearance.Parent = this.cmbQuyen;
-            this.cmbQuyen.Location = new System.Drawing.Point(251, 341);
+            this.cmbQuyen.Location = new System.Drawing.Point(248, 276);
             this.cmbQuyen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbQuyen.Name = "cmbQuyen";
             this.cmbQuyen.ShadowDecoration.Parent = this.cmbQuyen;
@@ -195,7 +190,7 @@ namespace QLKTX.GUI
             this.txtSearchAcc.ForeColor = System.Drawing.Color.Black;
             this.txtSearchAcc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearchAcc.HoverState.Parent = this.txtSearchAcc;
-            this.txtSearchAcc.Location = new System.Drawing.Point(251, 408);
+            this.txtSearchAcc.Location = new System.Drawing.Point(248, 343);
             this.txtSearchAcc.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtSearchAcc.Name = "txtSearchAcc";
             this.txtSearchAcc.PasswordChar = '\0';
@@ -207,35 +202,6 @@ namespace QLKTX.GUI
             this.txtSearchAcc.TabIndex = 41;
             this.txtSearchAcc.TextOffset = new System.Drawing.Point(8, 0);
             this.txtSearchAcc.TextChanged += new System.EventHandler(this.txtSearchAcc_TextChanged);
-            // 
-            // txtPassAcc
-            // 
-            this.txtPassAcc.BorderColor = System.Drawing.Color.Gray;
-            this.txtPassAcc.BorderRadius = 5;
-            this.txtPassAcc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassAcc.DefaultText = "";
-            this.txtPassAcc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPassAcc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPassAcc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassAcc.DisabledState.Parent = this.txtPassAcc;
-            this.txtPassAcc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassAcc.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.txtPassAcc.FocusedState.Parent = this.txtPassAcc;
-            this.txtPassAcc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassAcc.ForeColor = System.Drawing.Color.Black;
-            this.txtPassAcc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassAcc.HoverState.Parent = this.txtPassAcc;
-            this.txtPassAcc.Location = new System.Drawing.Point(251, 268);
-            this.txtPassAcc.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtPassAcc.Name = "txtPassAcc";
-            this.txtPassAcc.PasswordChar = '\0';
-            this.txtPassAcc.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtPassAcc.PlaceholderText = "Mật khẩu";
-            this.txtPassAcc.SelectedText = "";
-            this.txtPassAcc.ShadowDecoration.Parent = this.txtPassAcc;
-            this.txtPassAcc.Size = new System.Drawing.Size(231, 38);
-            this.txtPassAcc.TabIndex = 41;
-            this.txtPassAcc.TextOffset = new System.Drawing.Point(8, 0);
             // 
             // txtAccount
             // 
@@ -311,7 +277,7 @@ namespace QLKTX.GUI
             this.btnDelete.HoverState.FillColor = System.Drawing.SystemColors.ControlLight;
             this.btnDelete.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(301, 508);
+            this.btnDelete.Location = new System.Drawing.Point(301, 458);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
@@ -344,24 +310,12 @@ namespace QLKTX.GUI
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Đăng Nhập";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(57, 278);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 28);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Mật Khẩu";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(83, 349);
+            this.label4.Location = new System.Drawing.Point(80, 284);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 28);
@@ -373,48 +327,12 @@ namespace QLKTX.GUI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(60, 418);
+            this.label5.Location = new System.Drawing.Point(57, 353);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 28);
             this.label5.TabIndex = 0;
             this.label5.Text = "Tìm Kiếm";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Quyền";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Mật Khẩu";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên Đăng Nhập";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Họ Tên";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // STT
-            // 
-            this.STT.FillWeight = 50F;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
             // 
             // dgvQLAccount
             // 
@@ -439,7 +357,6 @@ namespace QLKTX.GUI
             this.STT,
             this.Column1,
             this.Column2,
-            this.Column3,
             this.Column4});
             this.dgvQLAccount.Location = new System.Drawing.Point(554, 0);
             this.dgvQLAccount.Margin = new System.Windows.Forms.Padding(4);
@@ -450,6 +367,35 @@ namespace QLKTX.GUI
             this.dgvQLAccount.Size = new System.Drawing.Size(754, 641);
             this.dgvQLAccount.TabIndex = 13;
             this.dgvQLAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLAccount_CellClick);
+            // 
+            // STT
+            // 
+            this.STT.FillWeight = 50F;
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Họ Tên";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Đăng Nhập";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Quyền";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // frmNV_ListAccount
             // 
@@ -476,20 +422,17 @@ namespace QLKTX.GUI
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridView dgvQLAccount;
         private Guna.UI2.WinForms.Guna2ComboBox cmbQuyen;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchAcc;
-        private Guna.UI2.WinForms.Guna2TextBox txtPassAcc;
         private Guna.UI2.WinForms.Guna2TextBox txtAccount;
         private Guna.UI2.WinForms.Guna2TextBox txtFullName;
         private Guna.UI2.WinForms.Guna2ComboBox cmbViewListAcc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

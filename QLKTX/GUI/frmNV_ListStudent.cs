@@ -10,26 +10,39 @@ namespace QLKTX.GUI
 {
     public partial class frmNV_ListStudent : Form
     {
-        frmLogin frmLogin = new frmLogin();
-        string manv = frmLogin.userLogin;
+        string manv = "";
         private readonly KTXDBContext context;
-        public frmNV_ListStudent()
+        public frmNV_ListStudent(string manv)
         {
             context = new KTXDBContext();
             InitializeComponent();
+            this.manv = manv;
         }
         private void FillRoomCombobox(List<PHONGSV> listRoom)
         {
-
             this.cmbRoom.DataSource = listRoom;
             this.cmbRoom.DisplayMember = "TENPHONG";
             this.cmbRoom.ValueMember = "MAPHONG";
+  
         }
         private void FillSchoolCombobox(List<TRUONGHOC> listSchool)
         {
             this.cmbSchool.DataSource = listSchool;
             this.cmbSchool.DisplayMember = "TENTRUONG";
             this.cmbSchool.ValueMember = "MATRUONG";
+        }
+        private void FillBuildingCombobox(List<TOANHA> listToa)
+        {
+            this.cmbToa.DataSource = listToa;
+            this.cmbToa.DisplayMember = "TENTOA";
+            this.cmbToa.ValueMember = "MATOA";
+        }
+        private void cmbToa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string a = cmbToa.SelectedValue.ToString();
+            List<PHONGSV> listRoom = context.PHONGSV.Where(p => p.MATOA.Equals(a)).ToList();
+            FillRoomCombobox(listRoom);
+            cmbRoom.Enabled = true;           
         }
         private void BindGrid(List<SINHVIEN> listStudent)
         {
@@ -45,7 +58,7 @@ namespace QLKTX.GUI
                     dgvStudent.Rows[index].Cells[1].Value = item.CCCD;
                     dgvStudent.Rows[index].Cells[2].Value = item.MSSV;
                     dgvStudent.Rows[index].Cells[3].Value = item.HOTEN;
-                    dgvStudent.Rows[index].Cells[4].Value = item.NAMSINH;
+                    dgvStudent.Rows[index].Cells[4].Value = item.NAMSINH.ToString("dd/MM/yyyy");
                     dgvStudent.Rows[index].Cells[5].Value = item.GIOITINH;
                     dgvStudent.Rows[index].Cells[6].Value = item.SDT;
                     dgvStudent.Rows[index].Cells[7].Value = item.EMAIL;
@@ -53,8 +66,9 @@ namespace QLKTX.GUI
                     dgvStudent.Rows[index].Cells[9].Value = item.NGAYVAOKTX;
                     dgvStudent.Rows[index].Cells[10].Value = item.NGAYRAKTX;
                     dgvStudent.Rows[index].Cells[11].Value = item.PHONGSV.TENPHONG;
-                    dgvStudent.Rows[index].Cells[12].Value = item.TRUONGHOC.TENTRUONG;
-                    dgvStudent.Rows[index].Cells[13].Value = item.TRANGTHAI;
+                    dgvStudent.Rows[index].Cells[12].Value = item.PHONGSV.TOANHA.TENTOA;
+                    dgvStudent.Rows[index].Cells[13].Value = item.TRUONGHOC.TENTRUONG;
+                    dgvStudent.Rows[index].Cells[14].Value = item.TRANGTHAI;
                     this.dgvStudent.Columns[10].Visible = false;
                     i++;
                 }
@@ -82,11 +96,12 @@ namespace QLKTX.GUI
                         dgvStudent.Rows[index].Cells[7].Value = item.EMAIL;
                         dgvStudent.Rows[index].Cells[8].Value = item.DIACHI;
                         dgvStudent.Rows[index].Cells[9].Value = item.NGAYVAOKTX;
-                        dgvStudent.Rows[index].Cells[10].Value = item.PHONGSV.TENPHONG;
-                        dgvStudent.Rows[index].Cells[11].Value = item.TRUONGHOC.TENTRUONG;
-                        dgvStudent.Rows[index].Cells[12].Value = item.TRANGTHAI;
-                        dgvStudent.Rows[index].Cells[13].Value = item.NGAYRAKTX;
-                        this.dgvStudent.Columns[13].Visible = false;
+                        dgvStudent.Rows[index].Cells[10].Value = item.NGAYRAKTX;
+                        dgvStudent.Rows[index].Cells[11].Value = item.PHONGSV.TENPHONG;
+                        dgvStudent.Rows[index].Cells[12].Value = item.PHONGSV.TOANHA.TENTOA;
+                        dgvStudent.Rows[index].Cells[13].Value = item.TRUONGHOC.TENTRUONG;
+                        dgvStudent.Rows[index].Cells[14].Value = item.TRANGTHAI;
+                        this.dgvStudent.Columns[10].Visible = false;
                         i++;
                     }
                 }
@@ -109,11 +124,12 @@ namespace QLKTX.GUI
                         dgvStudent.Rows[index].Cells[7].Value = item.EMAIL;
                         dgvStudent.Rows[index].Cells[8].Value = item.DIACHI;
                         dgvStudent.Rows[index].Cells[9].Value = item.NGAYVAOKTX;
-                        dgvStudent.Rows[index].Cells[10].Value = item.PHONGSV.TENPHONG;
-                        dgvStudent.Rows[index].Cells[11].Value = item.TRUONGHOC.TENTRUONG;
-                        dgvStudent.Rows[index].Cells[12].Value = item.TRANGTHAI;
-                        dgvStudent.Rows[index].Cells[13].Value = item.NGAYRAKTX;
-                        this.dgvStudent.Columns[13].Visible = true;
+                        dgvStudent.Rows[index].Cells[10].Value = item.NGAYRAKTX;
+                        dgvStudent.Rows[index].Cells[11].Value = item.PHONGSV.TENPHONG;
+                        dgvStudent.Rows[index].Cells[12].Value = item.PHONGSV.TOANHA.TENTOA;
+                        dgvStudent.Rows[index].Cells[13].Value = item.TRUONGHOC.TENTRUONG;
+                        dgvStudent.Rows[index].Cells[14].Value = item.TRANGTHAI;
+                        this.dgvStudent.Columns[10].Visible = true;
                         i++;
                     }
                 }
@@ -134,11 +150,12 @@ namespace QLKTX.GUI
                     dgvStudent.Rows[index].Cells[7].Value = item.EMAIL;
                     dgvStudent.Rows[index].Cells[8].Value = item.DIACHI;
                     dgvStudent.Rows[index].Cells[9].Value = item.NGAYVAOKTX;
-                    dgvStudent.Rows[index].Cells[10].Value = item.PHONGSV.TENPHONG;
-                    dgvStudent.Rows[index].Cells[11].Value = item.TRUONGHOC.TENTRUONG;
-                    dgvStudent.Rows[index].Cells[12].Value = item.TRANGTHAI;
-                    dgvStudent.Rows[index].Cells[13].Value = item.NGAYRAKTX;
-                    this.dgvStudent.Columns[13].Visible = true;
+                    dgvStudent.Rows[index].Cells[10].Value = item.NGAYRAKTX;
+                    dgvStudent.Rows[index].Cells[11].Value = item.PHONGSV.TENPHONG;
+                    dgvStudent.Rows[index].Cells[12].Value = item.PHONGSV.TOANHA.TENTOA;
+                    dgvStudent.Rows[index].Cells[13].Value = item.TRUONGHOC.TENTRUONG;
+                    dgvStudent.Rows[index].Cells[14].Value = item.TRANGTHAI;
+                    this.dgvStudent.Columns[10].Visible = true;
                     i++;
                 }
             }
@@ -164,11 +181,11 @@ namespace QLKTX.GUI
             txtStudentName.Text = "";
             txtAddressSV.Text = "";
             txtPhoneSV.Text = "";
-            cmbSchool.SelectedValue = 0;
+            cmbSchool.SelectedIndex = 0;
+            cmbToa.SelectedIndex = 0;
+            cmbRoom.SelectedIndex = 0;
             robMale.Checked = true;
             dtpBirthday.Value = DateTime.Now;
-            //cmbTrangThaiSV.SelectedIndex = 0;
-            cmbRoom.SelectedIndex = 0;
             //Thân nhân
             txtTenThanNhan.Text = "";
             txtSDTThanNhan.Text = "";
@@ -216,17 +233,16 @@ namespace QLKTX.GUI
         {
             try
             {
-                List<TRUONGHOC> listSchool = context.TRUONGHOC.ToList();
-                List<PHONGSV> listRoom = context.PHONGSV.ToList();
+                List<TRUONGHOC> listSchool = context.TRUONGHOC.ToList();          
                 List<SINHVIEN> listStudent = context.SINHVIEN.ToList();
-                //List<TOANHA> listToa = context.TOANHA.ToList();
-                FillRoomCombobox(listRoom);
+                List<TOANHA> listToa = context.TOANHA.ToList();
+                List<PHONGSV> listRoom = context.PHONGSV.ToList();
+                FillBuildingCombobox(listToa);
                 FillSchoolCombobox(listSchool);
+                FillRoomCombobox(listRoom);
                 BindGrid(listStudent);
-                cmbViewListSV.SelectedIndex = 0;
-                robMale.Checked = true;
-                cmbRoom.SelectedIndex = 0;
-                cmbSchool.SelectedIndex = 0;
+                setNull();
+                cmbRoom.Enabled = false;
                 pnAddStudent.Visible = false;
             }
             catch (Exception ex)
@@ -236,6 +252,8 @@ namespace QLKTX.GUI
         }
         private void btnAddSV_Click(object sender, EventArgs e)
         {
+            //try
+            //{
             if (CheckValidate())
             {
                 string thongbao = "\nTạo Mới Tài Khoản Thành Công!\nTài khoản: " + txtCCCD.Text + "\nMật khẩu: " + txtPhoneSV.Text;
@@ -254,83 +272,87 @@ namespace QLKTX.GUI
                 {
                     ACCOUNT user = context.ACCOUNT.FirstOrDefault(p => p.USER == txtCCCD.Text);
                     SINHVIEN masv = context.SINHVIEN.FirstOrDefault(p => p.CCCD == txtCCCD.Text);
-                    //PHONGSV phongsv = context.PHONGSV.FirstOrDefault();
+                    PHONGSV phongsv = context.PHONGSV.FirstOrDefault(p => p.MAPHONG == cmbRoom.SelectedValue.ToString());
                     if (masv == null)
                     {
-                        SINHVIEN sv = new SINHVIEN()
+                        if (phongsv.SOLUONG > 0)
                         {
-                            CCCD = txtCCCD.Text,
-                            MSSV = txtStudentID.Text,
-                            HOTEN = txtStudentName.Text,
-                            DIACHI = txtAddressSV.Text,
-                            EMAIL = txtEmail.Text,
-                            SDT = txtPhoneSV.Text,
-                            GIOITINH = gioitinh,
-                            NGAYVAOKTX = DateTime.Now,
-                            NAMSINH = dtpBirthday.Value,
-                            MATRUONG = cmbSchool.SelectedValue.ToString(),
-                            MAPHONG = cmbRoom.SelectedValue.ToString(),
-                            TRANGTHAI = "Đang Ở"
-                        };
-                        ACCOUNT a = new ACCOUNT()
-                        {
-                            USER = txtCCCD.Text,
-                            PASS = txtPhoneSV.Text,
-                            QUYEN = "USER",
-                            CCCD = txtCCCD.Text
-                        };
-                        NGUOITHANSV nguoithan = new NGUOITHANSV()
-                        {
-                            TENNGUOITHAN = txtTenThanNhan.Text,
-                            QUANHEVOISV = cmbQuanHeVoiSV.SelectedItem.ToString(),
-                            SDT = txtSDTThanNhan.Text,
-                            DIACHI = txtDiaChiTN.Text,
-                            CCCD = txtCCCD.Text
-                        }; 
-                        PHONGSV phongsv = context.PHONGSV.FirstOrDefault(p => p.MAPHONG == cmbRoom.SelectedValue.ToString());
-                        {
-                            if (phongsv.SOLUONG > 0)
+                            SINHVIEN sv = new SINHVIEN()
                             {
-                                phongsv.SOLUONG -= 1;
-                                context.SINHVIEN.Add(sv);
-                                context.ACCOUNT.Add(a);
-                                context.NGUOITHANSV.Add(nguoithan);
-                                context.SaveChanges();
-                                MessageBox.Show("Thêm mới dữ liệu thành công!" + thongbao, "Thông báo", MessageBoxButtons.OK);
-                            }
-                            else
+                                CCCD = txtCCCD.Text,
+                                MSSV = txtStudentID.Text,
+                                HOTEN = txtStudentName.Text,
+                                DIACHI = txtAddressSV.Text,
+                                EMAIL = txtEmail.Text,
+                                SDT = txtPhoneSV.Text,
+                                GIOITINH = gioitinh,
+                                NGAYVAOKTX = DateTime.Now,
+                                NAMSINH = dtpBirthday.Value,
+                                MATRUONG = cmbSchool.SelectedValue.ToString(),
+                                MAPHONG = cmbRoom.SelectedValue.ToString(),
+                                TRANGTHAI = "Đang Ở"
+                            };
+                            context.SINHVIEN.Add(sv);
+                            context.SaveChanges();
+                            ACCOUNT a = new ACCOUNT()
                             {
-                                MessageBox.Show("Phòng Đã Đầy", "Thông báo", MessageBoxButtons.OK);
-                            }
+                                USER = txtCCCD.Text,
+                                PASS = txtPhoneSV.Text,
+                                QUYEN = "USER",
+                                CCCD = txtCCCD.Text
+                            };
+                            context.ACCOUNT.Add(a);
+                            context.SaveChanges();
+                            NGUOITHANSV nguoithan = new NGUOITHANSV()
+                            {
+                                TENNGUOITHAN = txtTenThanNhan.Text,
+                                QUANHEVOISV = cmbQuanHeVoiSV.SelectedItem.ToString(),
+                                SDT = txtSDTThanNhan.Text,
+                                DIACHI = txtDiaChiTN.Text,
+                                CCCD = txtCCCD.Text
+                            };
+                            context.NGUOITHANSV.Add(nguoithan);
+                            context.SaveChanges();
+                            HOADONLEPHI lephi = new HOADONLEPHI()
+                            {
+                                //MAHDLEPHI = 1,
+                                CCCD =txtCCCD.Text,
+                                NGAYLAP = DateTime.Now,
+                                MANV = manv,
+                                TRANGTHAI = "Chưa Thanh Toán",
+                                TONGTIEN = 0,
+                                HANCUOI = DateTime.Now.AddMonths(int.Parse(cmbSoThang.SelectedItem.ToString()))
+                            };
+                            context.HOADONLEPHI.Add(lephi);
+                            context.SaveChanges();
+                            CTHOADONLEPHI ctiethoadon = new CTHOADONLEPHI()
+                            {
+                                SOTHANG = int.Parse(cmbSoThang.SelectedItem.ToString()),
+                                MAPHONG = sv.MAPHONG,
+                                MAHDLEPHI = lephi.MAHDLEPHI
+                            };
+                            context.CTHOADONLEPHI.Add(ctiethoadon);
+                            context.SaveChanges();
+                            reloadDGV();
+                            setNull();
+                            phongsv.SOLUONG -= 1;
+                            MessageBox.Show("Thêm mới dữ liệu thành công!" + thongbao, "Thông báo", MessageBoxButtons.OK);
                         }
-                        context.SaveChanges();
-                        HOADONLEPHI lephi = new HOADONLEPHI()
+                        else
                         {
-                            CCCD = txtCCCD.Text,
-                            NGAYLAP = DateTime.Now,
-                            MANV = manv,
-                            TRANGTHAI = "Chưa Thanh Toán",
-                            TONGTIEN = 0,
-                            HANCUOI = DateTime.Now.AddMonths(int.Parse(cmbSoThang.SelectedItem.ToString()))
-                        };
-                        context.HOADONLEPHI.Add(lephi);
-                        context.SaveChanges();
-                        CTHOADONLEPHI ctiethoadon = new CTHOADONLEPHI()
-                        {
-                            SOTHANG = int.Parse(cmbSoThang.SelectedItem.ToString()),
-                            MAPHONG = sv.MAPHONG,
-                            MAHDLEPHI = lephi.MAHDLEPHI
-                        };
-                        context.CTHOADONLEPHI.Add(ctiethoadon);
-                        context.SaveChanges();
-                        reloadDGV();
-                        setNull();
+                            MessageBox.Show("Phòng Đã Đầy", "Thông báo", MessageBoxButtons.OK);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sinh viên đã tồn tại", "Thông báo", MessageBoxButtons.OK);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Sinh viên đã tồn tại", "Thông báo", MessageBoxButtons.OK);
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
         }
         private void btnUpdateSV_Click(object sender, EventArgs e)
@@ -451,7 +473,8 @@ namespace QLKTX.GUI
                     txtEmail.Text = dgvStudent.Rows[e.RowIndex].Cells[7].FormattedValue.ToString();
                     txtAddressSV.Text = dgvStudent.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
                     cmbRoom.SelectedIndex = cmbRoom.FindString(dgvStudent.Rows[e.RowIndex].Cells[11].FormattedValue.ToString());
-                    cmbSchool.SelectedIndex = cmbSchool.FindString(dgvStudent.Rows[e.RowIndex].Cells[12].FormattedValue.ToString());
+                    cmbToa.SelectedIndex = cmbToa.FindString(dgvStudent.Rows[e.RowIndex].Cells[12].FormattedValue.ToString());
+                    cmbSchool.SelectedIndex = cmbSchool.FindString(dgvStudent.Rows[e.RowIndex].Cells[13].FormattedValue.ToString());
                     List<NGUOITHANSV> listThanNhan = context.NGUOITHANSV.Where(p=>p.CCCD == txtCCCD.Text).ToList();
                     BindGridThanNhan(listThanNhan);
                 }
@@ -560,7 +583,7 @@ namespace QLKTX.GUI
             oSheet.Name = sheetName;
 
             // Tạo phần Tiêu đề
-            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "G1");
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "O1");
 
             head.MergeCells = true;
 
@@ -646,22 +669,28 @@ namespace QLKTX.GUI
 
             cl12.Value2 = "Phòng";
 
-            cl12.ColumnWidth = 18.5;
-
+            cl12.ColumnWidth = 15.5;
 
             Microsoft.Office.Interop.Excel.Range cl13 = oSheet.get_Range("M3", "M3");
 
-            cl13.Value2 = "Trường";
+            cl13.Value2 = "Tòa";
 
-            cl13.ColumnWidth = 18.5;
+            cl13.ColumnWidth = 15.5;
+
 
             Microsoft.Office.Interop.Excel.Range cl14 = oSheet.get_Range("N3", "N3");
 
-            cl14.Value2 = "Trạng Thái";
+            cl14.Value2 = "Trường";
 
-            cl14.ColumnWidth = 18;
+            cl14.ColumnWidth = 18.5;
 
-            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "N3");
+            Microsoft.Office.Interop.Excel.Range cl15 = oSheet.get_Range("O3", "O3");
+
+            cl15.Value2 = "Trạng Thái";
+
+            cl15.ColumnWidth = 18;
+
+            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "O3");
 
             rowHead.Font.Bold = true;
 
@@ -747,8 +776,9 @@ namespace QLKTX.GUI
             DataColumn col10 = new DataColumn("NGAYVAOKTX");
             DataColumn col11 = new DataColumn("NGAYRAKTX");
             DataColumn col12 = new DataColumn("PHONGSV.MAPHONGSV");
-            DataColumn col13 = new DataColumn("TENTRUONG");
-            DataColumn col14 = new DataColumn("TRANGTHAI");
+            DataColumn col13 = new DataColumn("PHONGSV.TOANHA.TENTOA");
+            DataColumn col14 = new DataColumn("TENTRUONG");
+            DataColumn col15 = new DataColumn("TRANGTHAI");
 
 
             dataTable.Columns.Add(col1);
@@ -765,6 +795,7 @@ namespace QLKTX.GUI
             dataTable.Columns.Add(col12);
             dataTable.Columns.Add(col13);
             dataTable.Columns.Add(col14);
+            dataTable.Columns.Add(col15);
 
             foreach (DataGridViewRow dgvRow in dgvStudent.Rows)
             {
@@ -784,11 +815,12 @@ namespace QLKTX.GUI
                 dtRow[11] = dgvRow.Cells[11].Value;
                 dtRow[12] = dgvRow.Cells[12].Value;
                 dtRow[13] = dgvRow.Cells[13].Value;
+                dtRow[14] = dgvRow.Cells[14].Value;
                 // dtRow[10] = dgvRow.Cells[10].Value;
 
                 dataTable.Rows.Add(dtRow);
             }
-            ExportFile(dataTable, "Danh Sach", "Danh Sách Sinh Viên");
+            ExportFile(dataTable, "Danh Sách", "Danh Sách Sinh Viên");
         }
     }
 }

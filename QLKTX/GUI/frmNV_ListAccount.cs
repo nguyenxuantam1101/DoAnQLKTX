@@ -28,8 +28,7 @@ namespace QLKTX.GUI
                     dgvQLAccount.Rows[index].Cells[0].Value = i;
                     dgvQLAccount.Rows[index].Cells[1].Value = item.NHANVIEN.HOTENNV;
                     dgvQLAccount.Rows[index].Cells[2].Value = item.USER;
-                    dgvQLAccount.Rows[index].Cells[3].Value = item.PASS;
-                    dgvQLAccount.Rows[index].Cells[4].Value = item.QUYEN;
+                    dgvQLAccount.Rows[index].Cells[3].Value = item.QUYEN;
                     i++;
                     //Sum();
                 }
@@ -47,8 +46,7 @@ namespace QLKTX.GUI
                     dgvQLAccount.Rows[index].Cells[0].Value = i;
                     dgvQLAccount.Rows[index].Cells[1].Value = item.SINHVIEN.HOTEN;
                     dgvQLAccount.Rows[index].Cells[2].Value = item.USER;
-                    dgvQLAccount.Rows[index].Cells[3].Value = item.PASS;
-                    dgvQLAccount.Rows[index].Cells[4].Value = item.QUYEN;
+                    dgvQLAccount.Rows[index].Cells[3].Value = item.QUYEN;
                     i++;
                     //Sum();
                 }
@@ -59,14 +57,13 @@ namespace QLKTX.GUI
         {
             txtFullName.Text = "";
             txtAccount.Text = "";
-            txtPassAcc.Text = "";
             cmbQuyen.SelectedIndex = 0;
             txtSearchAcc.Text = "";
         }
 
         private bool CheckValidate()
         {
-            if (txtAccount.Text == "" || txtPassAcc.Text == "" || txtFullName.Text == "")
+            if (txtAccount.Text == "" || txtFullName.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
                 return false;
@@ -106,7 +103,6 @@ namespace QLKTX.GUI
                     else
                         dbUpdate.NHANVIEN.HOTENNV = txtFullName.Text;
                     dbUpdate.USER = txtAccount.Text;
-                    dbUpdate.PASS = txtPassAcc.Text;
                     dbUpdate.QUYEN = cmbQuyen.Text;
                     context.SaveChanges();
                     reloadDGVSinhVien();
@@ -155,8 +151,7 @@ namespace QLKTX.GUI
 
                     txtFullName.Text = dgvQLAccount.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                     txtAccount.Text = dgvQLAccount.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-                    cmbQuyen.SelectedIndex = cmbQuyen.FindString(dgvQLAccount.Rows[e.RowIndex].Cells[4].FormattedValue.ToString());
-                    txtPassAcc.Text = dgvQLAccount.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
+                    cmbQuyen.SelectedIndex = cmbQuyen.FindString(dgvQLAccount.Rows[e.RowIndex].Cells[3].FormattedValue.ToString());
                 }
             }
             catch (Exception ex)
